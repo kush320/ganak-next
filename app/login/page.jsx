@@ -19,7 +19,6 @@ export default function Home() {
       height={"100vh"}
       overflow={"hidden"}
       backgroundColor={"#f8f9ff"}
-      boxShadow={"outline"}
     >
       <Box width={1 / 2}>
         <Box>
@@ -40,16 +39,16 @@ export default function Home() {
             <Input
               type="text"
               placeholder="मोबाईल नम्बर"
-              sx={{ height: "40px", width: "300px", marginTop:'10%' }}
+              sx={{ height: "30%", width: "86%", marginTop: "10%" }}
             />
 
             <Input
               type="password"
               placeholder="पासवर्ड"
-              sx={{ height: "40px", width: "300px", marginTop: "5%" }}
+              sx={{ height: "30%", width: "86%", marginTop: "5%" }}
             />
           </FormControl>
-          <Text marginLeft={"10%"} marginRight={"10%"} marginTop={"5%"}>
+          <Text marginLeft={"10%"} marginRight={"10%"} marginTop={"15%"}>
             लगिन हुनका लागि आफ्नो मोबाईल नम्बर र पसवर्ड हाल्नुहोस{" "}
           </Text>
           <Button
@@ -58,9 +57,8 @@ export default function Home() {
             sx={{
               marginTop: "5%",
               marginLeft: "10%",
-             
-              height: "40px",
-              width: "300px",
+              height: "10%",
+              width: "78%",
             }}
           >
             अगादि बध्नुहोस्
@@ -79,10 +77,10 @@ export default function Home() {
             bgColor="#30A525"
             color={"white"}
             sx={{
-              marginLeft: "10%",
+              marginLeft: "12%",
               marginTop: "5%",
-              height: "40px",
-              width: "300px",
+              height: "10%",
+              width: "78%",
             }}
           >
             नया खाता बनाउनुहोस्
