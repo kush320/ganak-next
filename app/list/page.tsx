@@ -14,7 +14,9 @@ import {
   Text,
   TableContainer,
   Button,
+  HStack,
 } from "@chakra-ui/react";
+import SearchBar from "@/component/SearchBar";
 
 const data = [
   { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
@@ -31,25 +33,21 @@ const data = [
 export default function page() {
   return (
     <TableContainer
-      width={"75%"}
-      marginLeft={"20%"}
+      width={"70%"}
+      marginLeft={"25%"}
       marginTop={"10%"}
       marginRight={"5%"}
     >
-      <Box>
-        <Text textAlign={"left"} fontSize={"24px"} fontWeight={"bold"}>
-          प्रयोगकर्ता सूचि
-        </Text>
-        <Button
-          marginLeft={"60%"}
-          width={"40%"}
-          borderRadius={"8px"}
-          leftIcon={<Search2Icon />}
-        >
-          {" "}
-          खोजि गर्नुहोस्
-        </Button>
-      </Box>
+      <HStack>
+        <Box>
+          <Text textAlign={"left"} fontSize={"24px"} fontWeight={"bold"}>
+            सूचि
+          </Text>
+        </Box>
+        <Box>
+          <SearchBar/>
+        </Box>
+      </HStack>
       <Table size="sm" marginTop={"1%"}>
         <Thead>
           <Tr bg="#EFEFEF">
