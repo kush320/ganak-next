@@ -14,14 +14,14 @@ import React from "react";
 
 export default function page() {
   return (
-    <div>
       <Box
-        height="30%"
+        height="200px"
         bgColor={"#081A51"}
-        borderBottomLeftRadius={"20%"}
-        borderBottomRightRadius={"20%"}
+        borderBottomLeftRadius={"80px"}
+        borderBottomRightRadius={"80px"}
         position={"absolute"}
         width={"100%"}
+        
       >
         <Card
           marginLeft={"30%"}
@@ -29,6 +29,8 @@ export default function page() {
           backgroundColor={"white"}
           height={"350%"}
           marginTop={"5%"}
+          borderRadius={"5px"}
+          boxShadow={"2xl"}
           
           
         >
@@ -36,101 +38,107 @@ export default function page() {
             <Text
               fontSize={"24px"}
               fontWeight={"bold"}
-              marginLeft={"35%"}
+              textAlign={"center"}
               marginTop={"2%"}
             >
               साइन अप गर्नुहोस्
             </Text>
-            <Text fontSize={"16px"} marginLeft={"20%"}>
+            <Text fontSize={"16px"} textAlign={"center"}>
               आफ्नो खाता सिर्जना गर्न बिबरनहरु प्रबिस्त गर्नुहोस्
             </Text>
 
             <Avatar
               marginLeft={"45%"}
+              borderRadius={"70%"}
               height={"60px"}
               name="Ryan Florence"
               src="https://bit.ly/ryan-florence"
             />
           </Box>
-          <Box>
-            <Text marginLeft="5%" fontSize={"16px"} marginTop={"5%"}>
+         
+            <Text marginLeft="25%" fontSize={"16px"} marginTop={"5%"} >
               पुरा नाम्
             </Text>
             <Input
-              size={"lg"}
-              marginLeft="5%"
+            
+              marginLeft="25%"
               borderRadius={"10px"}
+              marginTop={"1%"}
               type="text"
               placeholder="पुरा नाम्"
-              sx={{ height: "12%", width: "55%" }}
+      
+              sx={{ height: "50px", width: "55%" }}
             />
-            <Text marginLeft="5%" fontSize={"16px"} marginTop={"2%"}>
+            <Text marginLeft="25%" fontSize={"16px"} marginTop={"3%"}>
               आफ्नो मोबाईल नम्बर हाल्नुहोस्
             </Text>
             <Input
-              size={"lg"}
-              marginLeft="5%"
+              
+              marginLeft="25%"
+              marginTop={"1%"}
               borderRadius={"10px"}
               type="text"
               placeholder="आफ्नो मोबाईल नम्बर हाल्नुहोस्"
-              sx={{ height: "12%",width: "55%"}}
+              sx={{ height: "50px",width: "55%"}}
             />
-            <Text marginLeft="5%" fontSize={"16px"} marginTop={"2%"}>
+            <Text marginLeft="25%" fontSize={"16px"} marginTop={"3%"}>
               आफ्नो इमेल हाल्नुहोस्
             </Text>
             <Input
-              size={"lg"}
-              marginLeft="5%"
+              
+              marginLeft="25%"
+              marginTop={"1%"}
               borderRadius={"10px"}
               type="text"
               placeholder="आफ्नो इमेल हाल्नुहोस्"
-              sx={{height: "12%",width: "55%" }}
+              sx={{height: "50px",width: "55%" }}
             />
-            <Text marginLeft="5%" fontSize={"16px"} marginTop={"2%"}>
+            <Text marginLeft="25%" fontSize={"16px"} marginTop={"3%"}>
               पासवर्ड हाल्नुहोस्
             </Text>
             <Input
-              size={"lg"}
-              marginLeft="5%"
+              marginLeft="25%"
               borderRadius={"10px"}
+              marginTop={"1%"}
               type="text"
               placeholder="पासवर्ड हाल्नुहोस्"
-              sx={{ height: "12%", width: "55%" }}
+              sx={{ height: "50px", width: "55%" }}
             />
-            <Text marginLeft="5%" fontSize={"16px"} marginTop={"2%"}>
+            <Text marginLeft="25%" fontSize={"16px"} marginTop={"3%"}>
               पासवर्ड पुस्ति गर्नुहोस्
             </Text>
             <Input
-              size={"lg"}
-              marginLeft="5%"
+              
+              marginLeft="25%"
+              marginTop={"1%"}
               borderRadius={"10px"}
               type="text"
               placeholder="पासवर्ड पुस्ति गर्नुहोस्"
-              sx={{ height: "12%", width: "55%"}}
+              sx={{ height: "50px", width: "55%"}}
             />
-          </Box>
+        
           <Button
             bgColor="#2E2C72"
             position={"relative"}
-            height={"5%"}
-            width="40%"
+            height={"40px"}
+            width="55%"
             color={"white"}
-            marginLeft={"30%"}
-            marginTop={"20%"}
+            marginLeft={"25%"}
+            marginTop={"5%"}
           >
            साइन अप​
           </Button>
           <Grid templateColumns="repeat(2, 1fr)" marginTop={"2%"}>
-            <GridItem w="100%" marginLeft={"55%"}>
+            <GridItem w="100%" marginLeft={"57%"}>
               {" "}
               पहिले नै खाता छ् ​?
             </GridItem>
-            <GridItem w="100%" marginLeft={"5%"} color={"#3547CE"}>
+            <GridItem w="100%" marginLeft={"7%"} color={"#3547CE"}>
               साइन गर्नुहोस्
             </GridItem>
           </Grid>
         </Card>
       </Box>
-    </div>
+  
   );
 }
