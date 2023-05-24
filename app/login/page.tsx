@@ -15,8 +15,6 @@ import {
 
 export default function Home() {
   return (
-   
-
     <Flex
       width={"100%"}
       height={"100vh"}
@@ -59,7 +57,7 @@ export default function Home() {
 
           <Input
             type="text"
-            variant='outline'
+            variant="outline"
             placeholder="मोबाईल नम्बर"
             sx={{
               height: "50px",
@@ -71,7 +69,7 @@ export default function Home() {
 
           <Input
             type="password"
-            variant='outline'
+            variant="outline"
             placeholder="पासवर्ड"
             sx={{
               height: "50px",

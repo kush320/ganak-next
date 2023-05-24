@@ -17,26 +17,29 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import SearchBar from "@/component/SearchBar";
+import Navbar from "@/component/Navbar";
 
 const data = [
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
+  { id: "१", name: "राम​", ward: "१", address:"पेप्सिकोला", date:"२०८०।०३।२०",},
+  { id: "१", name: "राम​", ward: "२", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "९", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "६", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "७", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "४", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "८", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "७", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  { id: "१", name: "राम​", ward: "९", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
 ];
 
 export default function page() {
   return (
+    
     <TableContainer
-      width={"70%"}
-      marginLeft={"25%"}
-      marginTop={"10%"}
-      marginRight={"5%"}
+      // width={"70%"}
+      marginLeft={"2%"}
+      
+      marginTop={"5%"}
+      marginRight={"2%"}
     >
       <HStack>
         <Box>
@@ -48,21 +51,25 @@ export default function page() {
           <SearchBar/>
         </Box>
       </HStack>
-      <Table size="sm" marginTop={"1%"}>
+      <Table size="sm" marginTop={"2%"} backgroundColor={"white"}>
         <Thead>
-          <Tr bg="#EFEFEF">
-            <Th>नाम​</Th>
-            <Th>आइदि</Th>
-            <Th>सम्पर्क​</Th>
-            <Th>कर्य </Th>​
+          <Tr height={"50px"} bg="#EFEFEF">
+            <Th fontSize={"20px"}>परिवार त्र.स​</Th>
+            <Th fontSize={"20px"}>प्रयोगकर्ताको नाम​</Th>
+            <Th fontSize={"20px"}>वार्ड न​</Th>
+            <Th fontSize={"20px"}>बस्तिको नाम​​</Th>
+            <Th fontSize={"20px"}>पेश मिती​</Th>
+            <Th fontSize={"20px"}>कार्य​ </Th>​
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((i: any) => (
+          {data.map((i) => (
             <Tr>
               <Td>{i.id}</Td>
               <Td>{i.name}</Td>
-              <Td>{i.contact}</Td>
+              <Td>{i.ward}</Td>
+              <Td>{i.address}</Td>
+              <Td>{i.date}</Td>
               <Td>
                 <ViewIcon />
                 <DeleteIcon

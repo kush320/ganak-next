@@ -12,6 +12,7 @@ import {
   TableCaption,
   Box,
   Text,
+  Avatar,
   TableContainer,
   Button,
   ChakraBaseProvider,
@@ -20,50 +21,54 @@ import {
 import SearchBar from "@/component/SearchBar";
 
 const data = [
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
-  { id: "१", name: "राम​", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
+  { name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
 ];
 
 export default function page() {
   return (
-    
-    <TableContainer
-      
-      width={"70%"}
-      marginLeft={"25%"}
-      marginTop={"10%"}
-      marginRight={"5%"}
-    ><HStack>
-      <Box>
-        <Text textAlign={"left"} fontSize={"24px"} fontWeight={"bold"}>
-          प्रयोगकर्ता सूचि
-        </Text>
+    <TableContainer marginLeft={"2%"} marginTop={"5%"} marginRight={"2%"}>
+      <HStack>
+        <Box>
+          <Text fontSize={"24px"} fontWeight={"bold"}>
+            प्रयोगकर्ता सूचि
+          </Text>
         </Box>
         <Box>
-        <SearchBar/>
-      </Box>
+          <SearchBar />
+        </Box>
       </HStack>
-      <Table size="sm" marginTop={"1%"}>
-        <Thead>
-          <Tr bg="#EFEFEF">
-            <Th>नाम​</Th>
-            <Th>आइदि</Th>
-            <Th>सम्पर्क​</Th>
-            <Th>कर्य </Th>​
+      <Table size="sm" marginTop={"1%"} backgroundColor={"white"}>
+        <Thead >
+          <Tr height={"50px"} bg="#EFEFEF">
+            <Th fontSize={"20px"}>नाम​</Th>
+            <Th fontSize={"20px"}>आइदि</Th>
+            <Th fontSize={"20px"}>सम्पर्क​</Th>
+            <Th fontSize={"20px"}>कार्य​</Th>​
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((i: any) => (
+          {data.map((i) => (
             <Tr>
-              <Td>{i.id}</Td>
-              <Td>{i.name}</Td>
+              <Td>
+                {" "}
+                <Avatar
+                  borderRadius={"30%"}
+                  height={"30px"}
+                  width={"30px"}
+                  name="Ryan Florence"
+                  src="https://bit.ly/ryan-florence"
+                />
+                {i.name}
+              </Td>
+              <Td >{i.id}</Td>
               <Td>{i.contact}</Td>
               <Td>
                 <ViewIcon />
@@ -85,6 +90,5 @@ export default function page() {
         </Tbody>
       </Table>
     </TableContainer>
-    
   );
 }

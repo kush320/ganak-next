@@ -17,17 +17,20 @@ import {
   Divider,
   Button,
 } from "@chakra-ui/react";
-import { InfoIcon, Search2Icon } from "@chakra-ui/icons";
+import { InfoIcon, Search2Icon, Icon } from "@chakra-ui/icons";
+import { FiCalendar, FiUser, FiAlignCenter } from "react-icons/fi";
 import SearchBar from "./SearchBar";
-export default function Navbar() {
+
+export default function Navbar({children}) {
   return (
     <Grid
       h="100vh"
-      templateRows="repeat(2, 1fr)"
+      w={"100%"}
+      templateRows="repeat(14, 1fr)"
       templateColumns="repeat(5, 1fr)"
       backgroundColor={"#f8f9ff"}
     >
-      <GridItem  rowSpan={2} colSpan={1} bg="#081A51">
+      <GridItem rowSpan={14} colSpan={1} bg="#081A51">
         <Center>
           <Image marginTop={"2%"} w={"30%"} src={"logo.png"}></Image>
         </Center>
@@ -40,56 +43,62 @@ export default function Navbar() {
           घरधुरि सर्बेछ्र्न बेसिसहर नगरपालिका
         </Text>
         <List marginLeft={"30%"}>
-          <ListItem >
-            <Text  color={"white"} marginTop={"40%"}>
+          <ListItem>
+            <Text color={"white"} marginTop={"40%"}>
               <ListIcon marginRight={"5%"}>
-                <InfoIcon color="white" />
+                <Icon as={FiAlignCenter} size={"25px"} color="white" />
               </ListIcon>
               दायस्बोर्द्
             </Text>
           </ListItem>
-          <ListItem ><a href="/userList">
-            <Text color={"white"} marginTop={"10%"}>
-              <ListIcon marginRight={"5%"}>
-                <InfoIcon color="white" />
-              </ListIcon>
-              प्रयोगकर्ता
-            </Text>
-            </a>
+          <ListItem>
+            <Link href="/userList">
+              <Text color={"white"} marginTop={"10%"}>
+                <ListIcon marginRight={"5%"}>
+                  <Icon as={FiUser} size={"25px"} color="white" />
+                </ListIcon>
+                प्रयोगकर्ता
+              </Text>
+            </Link>
           </ListItem>
-          <ListItem><a href="/list">
-            <Text color={"white"} marginTop={"10%"}>
-              <ListIcon marginRight={"5%"}>
-                <InfoIcon color="white" />
-              </ListIcon>
-              सूचि
-            </Text>
-            </a>
+          <ListItem>
+            <Link href="/list">
+              <Text color={"white"} marginTop={"10%"}>
+                <ListIcon marginRight={"5%"}>
+                  <Icon as={FiCalendar} size={"25px"} color="white" />
+                </ListIcon>
+                सूचि
+              </Text>
+            </Link>
           </ListItem>
         </List>
       </GridItem>
 
-      <GridItem height={"60px"} colSpan={4} bg="white">
+      <GridItem rowSpan={1} colSpan={4} bg="white">
         <HStack>
-          <Box>
             <Avatar
               borderRadius={"30%"}
-              marginTop={"20%"}
-              marginLeft={"3%"}
+              marginTop={"1%"}
+              marginLeft={"1%"}
               height={"40px"}
               name="Ryan Florence"
               src="https://bit.ly/ryan-florence"
             />
-          </Box>
-          <Box >
-            <Text marginTop={"10%"} fontWeight={"bold"}>राम दामना​</Text>
+          
+          <Box>
+            <Text marginTop={"10%"} fontWeight={"bold"}>
+              राम दामना​
+            </Text>
             <Text fontSize={"14px"}>ब्यबस्थापक</Text>
           </Box>
-          <Box  >
-            <SearchBar/>
-        
+          <Box>
+            <SearchBar />
           </Box>
         </HStack>
+
+      </GridItem>
+      <GridItem height={"100%"} rowSpan={13} colSpan={4} bg="white" bgColor={"#f8f9ff"}>
+        {children}
       </GridItem>
     </Grid>
   );
