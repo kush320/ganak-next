@@ -29,6 +29,7 @@ export default function Navbar({children}) {
       templateRows="repeat(14, 1fr)"
       templateColumns="repeat(5, 1fr)"
       backgroundColor={"#f8f9ff"}
+      overflow={"hidden"}
     >
       <GridItem rowSpan={14} colSpan={1} bg="#081A51">
         <Center>
@@ -97,7 +98,7 @@ export default function Navbar({children}) {
         </HStack>
 
       </GridItem>
-      <GridItem height={"100%"} rowSpan={13} colSpan={4} bg="white" bgColor={"#f8f9ff"}>
+      <GridItem overflow={"scroll"} height={"100%"} rowSpan={13} colSpan={4} bg="white" bgColor={"#f8f9ff"}>
         {children}
       </GridItem>
     </Grid>
