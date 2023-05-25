@@ -741,7 +741,7 @@ const question = () => {
         marginRight={"5%"}
       >
         <Text marginLeft={"5%"} fontSize={"bold"}>
-        २९. विद्यालयस्तरमा अध्ययन गरिरहेका बालबालिकाको विवरण
+          २९. विद्यालयस्तरमा अध्ययन गरिरहेका बालबालिकाको विवरण
         </Text>
         <RadioGroup onChange={setClinic} value={clinic}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
@@ -761,7 +761,7 @@ const question = () => {
         marginRight={"5%"}
       >
         <Text marginLeft={"5%"} fontSize={"bold"}>
-        २९.१ पालिका बाहिरका विद्यालयमा अध्ययनरत संख्या
+          २९.१ पालिका बाहिरका विद्यालयमा अध्ययनरत संख्या
         </Text>
         <RadioGroup onChange={setClinic} value={clinic}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
@@ -769,6 +769,620 @@ const question = () => {
             <Radio value="3"> २. आधारभुत तह संख्या:</Radio>
             <Radio value="4"> ३. कक्षा दशसम्म संख्या:</Radio>
             <Radio value="4"> ४. कक्षा १२ सम्म संख्या:</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३०. घरबाट विद्यालय जान लाग्ने समय (उपयुक्त महलमा  चिन्ह लगाउनु होला)
+        </Text>
+        <Table variant="simple">
+          <Thead>
+            <Tr>
+              <Th>विद्यालय</Th>
+              <Th>लाग्ने समय</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Radio value="1">कक्षा पाँचसम्म</Radio>
+              </Td>
+
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">१५ मिनेट भन्दा कम </Radio>
+                  <Radio marginLeft={"2%"} value="3">
+                    १५-३० मिनेट{" "}
+                  </Radio>
+                  <Radio value="4">३० मिनेट – १ घण्टा </Radio>
+                  <Radio marginLeft={"3%"} value="5">
+                    १ घण्टाभन्दा बढी
+                  </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Radio value="2">आधारभुत तह </Radio>
+              </Td>
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">१५ मिनेट भन्दा कम </Radio>
+                  <Radio marginLeft={"2%"} value="3">
+                    १५-३० मिनेट{" "}
+                  </Radio>
+                  <Radio value="4">३० मिनेट – १ घण्टा </Radio>
+                  <Radio marginLeft={"3%"} value="5">
+                    १ घण्टाभन्दा बढी
+                  </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Radio value="3">कक्षा दशसम्म </Radio>
+              </Td>
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">१५ मिनेट भन्दा कम </Radio>
+                  <Radio marginLeft={"2%"} value="3">
+                    १५-३० मिनेट{" "}
+                  </Radio>
+                  <Radio value="4">३० मिनेट – १ घण्टा </Radio>
+                  <Radio marginLeft={"3%"} value="5">
+                    १ घण्टाभन्दा बढी
+                  </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Radio value="3">माध्यामिक तह </Radio>
+              </Td>
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">१५ मिनेट भन्दा कम </Radio>
+                  <Radio marginLeft={"2%"} value="3">
+                    १५-३० मिनेट{" "}
+                  </Radio>
+                  <Radio value="4">३० मिनेट – १ घण्टा </Radio>
+                  <Radio marginLeft={"3%"} value="5">
+                    १ घण्टाभन्दा बढी
+                  </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३१. बीचैमा विद्यालय जान छोडेका ६ – १५ वर्ष उमेर समूहका बालबालिकाहरुका
+          संख्या र कारण
+        </Text>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३२. परिवारमा बालबालिकासँग सम्बन्धित कुनै विषयमा निर्णय गर्दा उनीहरुलाई
+          पनि सहभागी गराउने गर्नु भएको छ ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
+            <Radio value="1">क. गराउने गरेको छ</Radio>
+            <Radio value="2">ख. गराउने गरेको छैन</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३३. तपाईंको परिवारका बालबालिकाहरु बाल क्लव÷संगठन आदिमा आबद्धता रहेका
+          छन् ? छन भने क्लबको नाम उल्लेख गर्नुहोस।
+        </Text>
+        <Input
+          marginLeft={"5%"}
+          marginBottom={"5%"}
+          variant="flushed"
+          width={"90%"}
+        />
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३४. तपाईका घरका १८ वर्षभन्दा कम उमेरका कतिजना बालबालिका देहायको
+          निकायमा प्रतिनिधि वा सदस्य रहेका छन् ? यदी छन भने कुन मा?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">
+              क. स्थानिय तह/योजना तर्जुमा वा कार्यान्वयन समिति
+            </Radio>
+            <Radio value="3">ख. वडा नागरिक मञ्च</Radio>
+            <Radio value="4">
+              {" "}
+              ग. विद्यालय/स्वास्थ्य संस्था व्यवस्थापन समिति
+            </Radio>
+            <Radio value="5"> घ. बाल संरक्षण समिति</Radio>
+            <Radio value="5">
+              {" "}
+              ङ. बाल समुह वा बाल क्लब, बालमैत्री स्थानिय शासन समिति वा बाल संजाल
+            </Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३५. तपाईको परिवारका कुनै सदस्य स्थानीय कुनै संघसंस्था वा समूहमा आवद्ध
+          हुनुहुन्छ ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. सामुदायिक संस्था</Radio>
+            <Radio value="3">ख. कृषक समूह</Radio>
+            <Radio value="4"> ग. सामुदायिक वन उपभोक्ता समूह</Radio>
+            <Radio value="5"> घ. सहकारी संस्था</Radio>
+            <Radio value="5"> ङ. नागरिक सचेतना केन्द्र</Radio>
+            <Radio value="5"> च. परम्परागत समूह</Radio>
+            <Radio value="5"> छ. अन्य (नागरिक मञ्च, विभिन्न समिति...)</Radio>
+            <Radio value="5"> ज. प्यारालिगल कमिटि</Radio>
+            <Radio value="5"> झ. कुनैमा पनि नरहेको</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३६. तपाइको परिवारमा बाल संरक्षण, बालअधिकार, बालमैत्रि र बालविकास
+          सम्बन्धित तालिम लिनु भएको छ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
+            <Radio value="1">छ</Radio>
+            <Radio value="2">छैन</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३७. परिवारको मुख्य पेशा (एकमा मात्र चिन्ह लगाउने)
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. कृषि +पशुपालन+फलफूल​ खेती</Radio>
+            <Radio value="2">ख. व्यापार व्यवसाय</Radio>
+            <Radio value="2">ग. सेवा+नोकरी</Radio>
+            <Radio value="2">घ. ज्याला+मजदुरी</Radio>
+            <Radio value="2">ङ. विप्रेषण (विदेशबाट पठाएको रकम)</Radio>
+            <Radio value="2">च. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३८. आजभन्दा पाँच वर्ष पहिले तपाईंको परिवारको बसोवास कहाँ थियो ?
+        </Text>
+        <Radio value="1" marginLeft={"5%"}>
+          क. अन्यत्र स्थानमा
+        </Radio>
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ख. यसै स्थानमा अन्यत्र स्थानबाट आएको भए यहाँ किन आउनु भएको ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. सहरी सुविधाको लागि</Radio>
+            <Radio value="2">ख. द्वन्दका कारण</Radio>
+            <Radio value="2">ग. खेतीपाती गर्न</Radio>
+            <Radio value="2">घ. व्यापार व्यवसाय गर्न</Radio>
+            <Radio value="2">ङ. बैवाहिक सम्बन्ध भएर</Radio>
+            <Radio value="2">च. रोजगारीका लागि</Radio>
+            <Radio value="2">छ. प्राकृतिक विपत्तिबाट</Radio>
+            <Radio value="2">ज. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ३९. घरको अवस्था : (एकभन्दा बढी घर भएमा मूल घरको विवरणका आधारमा चिन्ह
+          लगाउने)
+        </Text>
+
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. खर वा फुसको छानो भएको</Radio>
+            <Radio value="2">ख. टायल, झिँगटी वा स्लेटको छानो भएको</Radio>
+            <Radio value="2">ग. जस्ता पाताको छानो भएको</Radio>
+            <Radio value="2">घ. घर ढलान भएको</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४०. तपाईंको घरमा खाना पकाउन प्रयोग हुने प्रमुख इन्धन कुन हो ?
+        </Text>
+
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. दाउरा</Radio>
+            <Radio value="2">ख. गोवरग्याँस</Radio>
+            <Radio value="2">ग. एल.पि. ग्याँस</Radio>
+            <Radio value="2">घ. विद्युत</Radio>
+            <Radio value="2">ङ. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४१. तपार्इंको घरमा संचारका साधनहरु के के रहेका छन् ? (वहु उत्तर) :
+        </Text>
+
+        <RadioGroup>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio>क. रेडियो</Radio>
+            <Radio>ख. टि.भि.</Radio>
+            <Radio>ग. टेलिफोन</Radio>
+            <Radio>घ. मोबाइल</Radio>
+            <Radio>ङ. इमेल+इन्टरनेट</Radio>
+            <Radio>च. नियमित आउने पत्रपत्रिका</Radio>
+            <Radio>छ. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४२. तपाईंको परिवारका सदस्यहरु कुन कुन पेशा (रोजगारी) मा संलग्न
+          हुनुहुन्छ ?
+        </Text>
+
+        <RadioGroup>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio>क. कृषि</Radio>
+            <Radio>ख. व्यापार</Radio>
+            <Radio>ग. जागिर</Radio>
+            <Radio>घ. ज्याला मजदुरी</Radio>
+            <Radio>ङ. उद्योग</Radio>
+            <Radio>च. बैदेशिक रोजगार</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४३. तपाईको परिवारमा १८ वर्षभन्दा कम उमेरका शारीरिक तथा मानसिक हिसाबले
+          अपांगता भएका सदस्यहरु भएमा तलको विवरण दिनुहोस् ।
+        </Text>
+        <Table variant="simple">
+          <Thead>
+            <Tr>
+              <Th>बालक/बालिका</Th>
+              <Th>भिन्न क्षमताको विवरण</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Radio value="1">बालक</Radio>
+              </Td>
+
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">शारीरिक अपाङ्गता </Radio>
+                  <Radio value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
+                  <Radio value="4">सुस्त श्रवण तथा बहिरा </Radio>
+                  <Radio value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
+                  <Radio value="4">मानसिक/बौद्दिकअपाङ्गता </Radio>
+                  <Radio value="4">श्रवण र दृष्टिविहिन (दुवै) </Radio>
+                  <Radio value="4">बहु अपाङ्गता </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Radio value="1">बालिका</Radio>
+              </Td>
+
+              <Td>
+                <RadioGroup>
+                  <Radio value="2">शारीरिक अपाङ्गता </Radio>
+                  <Radio value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
+                  <Radio value="4">सुस्त श्रवण तथा बहिरा </Radio>
+                  <Radio value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
+                  <Radio value="4">मानसिक/बौद्दिकअपाङ्गता </Radio>
+                  <Radio value="4">श्रवण र दृष्टिविहिन (दुवै) </Radio>
+                  <Radio value="4">बहु अपाङ्गता </Radio>
+                </RadioGroup>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४४. तपाईंको परिवारलाई आफ्नो उत्पादन÷आम्दानीले वर्षमा कति महिना खान
+          पुग्छ ?
+        </Text>
+
+        <RadioGroup>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio>क. ३ महिनाभन्दा कम खान पुग्ने</Radio>
+            <Radio>ख. ३ – ६ महिना खान पुग्ने</Radio>
+            <Radio>ग. ६ – ९ महिना खान पुग्ने</Radio>
+            <Radio>घ. ९ – १२ महिना खान पुग्ने</Radio>
+            <Radio>ङ. वचत हुने</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४५. ऋण लिएको भए कुन उद्देश्यका लागि लिनु भएको हो ?
+        </Text>
+
+        <RadioGroup>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio>क. घरायसी कार्य वा घर खर्च</Radio>
+            <Radio>ख. कृषि तथा पशुपालन व्यवसाय गर्न</Radio>
+            <Radio>ग. उद्योग व्यापार</Radio>
+            <Radio>घ. बैदेशिक रोजगारी</Radio>
+            <Radio>ङ. सामाजिक तथा धार्मिक कार्य गर्न</Radio>
+            <Radio>च. शिक्षा </Radio>
+            <Radio>छ. औषधि उपचार</Radio>
+            <Radio>ज. विवाह, व्रतवन्ध वा यस्तै व्यावहारिक खर्च</Radio>
+            <Radio>झ. गोवर ग्याँस, सोलार, विजुली आदि राख्न</Radio>
+            <Radio>झ. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४६. तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?
+        </Text>
+        <Table variant="simple">
+          <Thead>
+            <Tr>
+              <Th>कार्य</Th>
+              <Th>महिला</Th>
+              <Th>पुरुष</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Text>घर व्यवहारसम्बन्धी विषयमा निर्णय</Text>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Text>घरायसी काममा संलग्न</Text>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Text>बैंकमा खाता संचालन</Text>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Text>उद्योग व्यापारमा सहभागिता</Text>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+              <Td>
+                <Radio></Radio>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४७. विगत ३ वर्ष भित्रमा तपाईंको परिवारमा कति मानिसहरु प्रकोपवाट
+          प्रभावित भएका छन् कि छैनन?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
+            <Radio value="1">छ</Radio>
+            <Radio value="2">छैन</Radio>
+          </Stack>
+        </RadioGroup>
+        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+          यदी छ भने के बाट?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">बाढी </Radio>
+            <Radio value="2">पहिरो</Radio>
+            <Radio value="3">असिना</Radio>
+            <Radio value="4">हुरीबतास</Radio>
+            <Radio value="5">आगलागी</Radio>
+            <Radio value="5">भूकम्प</Radio>
+            <Radio value="5">खडेरी</Radio>
+            <Radio value="5">अतिबृष्टी</Radio>
+            <Radio value="5">महामारी</Radio>
+            <Radio value="5">सलह किरा आदी</Radio>
+            <Radio value="5">अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४८. तपाइको बालबालिका पढ्ने विद्यालय कुन प्रकोपको जोखिममा रहेको छ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. बाढी</Radio>
+            <Radio value="2">ख. पहिरो</Radio>
+            <Radio value="2">ग. भुकम्प</Radio>
+            <Radio value="2">घ. आगलागी</Radio>
+            <Radio value="2">ङ. अन्य</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+      <Box
+        marginTop={"2%"}
+        width={"85%"}
+        bg="#f8f9ff"
+        color="black"
+        marginLeft={"5%"}
+        marginRight={"5%"}
+      >
+        <Text marginLeft={"5%"} fontSize={"bold"}>
+          ४९. विद्यालय जाँदा आउँदा बालबालिकालाई के को जोखिम रहेको छ?
+        </Text>
+        <RadioGroup onChange={setClinic} value={clinic}>
+          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+            <Radio value="1">क. बाढी</Radio>
+            <Radio value="2">ख. पहिरो</Radio>
+            <Radio value="2">ग. वन्यजन्तु</Radio>
+            <Radio value="2">घ. भिरबाट लढ्ने</Radio>
+            <Radio value="2">ङ. अन्य</Radio>
           </Stack>
         </RadioGroup>
       </Box>

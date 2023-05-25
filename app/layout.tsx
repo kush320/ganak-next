@@ -25,12 +25,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ChakraProvider>
           {router !== "/login" && "/register" ? <Navbar children={children}/>: children}
-{/*           
-          
-          <Navbar/>
-           */}
-           
-{/* {children} */}
         </ChakraProvider>
       </body>
     </html>

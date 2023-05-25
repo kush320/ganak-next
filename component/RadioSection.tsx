@@ -6,24 +6,24 @@
 //     data.map((item)=> console.log(item.name))
 //     const [value, setValue] = React.useState("1");
 //   return (
-//     <RadioGroup onChange={setValue} value={value}>
-//           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
-//             <p>helo</p>
-//             {
-//                 data.map((item)=> {
-//                     <>
-//                     <a>fasdf</a>
-//                     <p>{item.name}</p>
-//                     {/* <Radio value={item.i}>{item.i}</Radio> */}
+    // <RadioGroup onChange={setValue} value={value}>
+    //       <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+    //         <p>helo</p>
+    //         {
+    //             data.map((item)=> {
+    //                 <>
+    //                 <a>fasdf</a>
+    //                 <p>{item.name}</p>
+    //                 {/* <Radio value={item.i}>{item.i}</Radio> */}
 
-//                     </>
+    //                 </>
                     
-//                 })
-//             }
-//             {/* <Radio value="2">पुरुष</Radio>
-//             <Radio value="3">तेस्रो लिङ्गी</Radio> */}
-//           </Stack>
-//         </RadioGroup>
+    //             })
+    //         }
+    //         {/* <Radio value="2">पुरुष</Radio>
+    //         <Radio value="3">तेस्रो लिङ्गी</Radio> */}
+    //       </Stack>
+    //     </RadioGroup>
 //   )
 // }
 
