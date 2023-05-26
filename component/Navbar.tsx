@@ -20,7 +20,6 @@ import {
 import { InfoIcon, Search2Icon, Icon } from "@chakra-ui/icons";
 import { FiCalendar, FiUser, FiAlignCenter } from "react-icons/fi";
 import SearchBar from "./SearchBar";
-// import Nepalidate from "./Nepalidate";
 
 
 export default function Navbar({ children }) {
@@ -43,7 +42,7 @@ export default function Navbar({ children }) {
           fontSize={"14px"}
           marginTop={"3%"}
         >
-          घरधुरि सर्बेछ्र्न 
+          घरधुरि सर्वेक्षण 
         </Text>
         <Text
           textAlign={"center"}
@@ -51,7 +50,7 @@ export default function Navbar({ children }) {
           fontSize={"14px"}
           
         >
-         बेसिसहर नगरपालिका
+         बेसीशहर​ नगरपालिका
         </Text>
         <List marginLeft={"10%"}>
           <ListItem>

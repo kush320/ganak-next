@@ -122,8 +122,8 @@ const question = () => {
           placeholder="जाति छानुहोस्"
           marginBottom={"5%"}
         >
-          <option value="option1">ब्रह्मिन् </option>
-          <option value="option2">क्शत्रिय</option>
+          <option value="option1">ब्राह्मण  </option>
+          <option value="option2">क्षेत्री</option>
           <option value="option3">वैश्य</option>
           <option value="option3">षुद्र​</option>
         </Select>
@@ -142,13 +142,13 @@ const question = () => {
         <Select
           marginLeft={"5%"}
           width={"40%"}
-          placeholder="धर्म छानुहोस्"
+          // placeholder="धर्म छानुहोस्"
           marginBottom={"5%"}
         >
-          <option value="option1">हिन्दुइस्म्</option>
-          <option value="option2">बुद्धिस्म्</option>
-          <option value="option3">ईस्लम्</option>
-          <option value="option3">ईस्लम्</option>
+          <option value="option1">हिन्दुजम</option>
+          <option value="option2">बुधिजम  </option>
+          <option value="option3">इस्लाम </option>
+          <option value="option3">क्रिस्टियन </option>
           <option value="option3">अन्य​</option>
         </Select>
       </Box>
@@ -168,16 +168,14 @@ const question = () => {
         <Table borderColor={"black"}>
           <Thead>
             <Tr>
-              <Th>उमेर</Th>
+             
               <Th>महिला​</Th>
               <Th>पुरुष​</Th>
               <Th>जम्मा​</Th>
             </Tr>
           </Thead>
           <Tbody>
-            <Td>
-              <Input variant="flushed" width={"60%"} />
-            </Td>
+           
             <Td>
               <Input variant="flushed" width={"60%"} />
             </Td>

@@ -21,18 +21,30 @@ export default function Home() {
       overflow={"hidden"}
       backgroundColor={"#f8f9ff"}
     >
-      <Box width={"50%"} backgroundImage={"mountain.svg"} borderRightRadius={"10px"}>
+      <Box
+        width={"50%"}
+        backgroundImage={"mountain.svg"}
+        borderRightRadius={"10px"}
+      >
         <Box>
           <Center>
-            <Image marginTop={"35vh"} w={"30%"} src={"logo.png"}></Image>
+            <Image marginTop={"30vh"} w={"20%"} src={"logo.png"}></Image>
           </Center>
           <Text
             textAlign={"center"}
             color={"white"}
-            fontSize={"24px"}
-            marginTop={"2%"}
+            fontSize={"20px"}
+            marginTop={"1%"}
           >
-            घरधुरि सर्बेछ्र्न बेसिसहर नगरपालिका
+            घरधुरि सर्वेक्षण 
+          </Text>
+          <Text
+            textAlign={"center"}
+            color={"white"}
+            fontSize={"20px"}
+            marginTop={"0%"}
+          >
+            बेसीशहर​ नगरपालिका
           </Text>
         </Box>
       </Box>

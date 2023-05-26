@@ -90,7 +90,6 @@ export default function page() {
   return (
     <div>
     <TableContainer
-      // width={"70%"}
       marginLeft={"2%"}
       marginTop={"2%"}
       marginRight={"2%"}
@@ -107,15 +106,15 @@ export default function page() {
           </Stack>
         </Box>
       </HStack>
-      <Table size="sm" marginTop={"2%"} backgroundColor={"white"}>
-        <Thead>
-          <Tr height={"50px"} bg="#EFEFEF">
-            <Th fontWeight={"semibold"} fontSize={"15px"}>परिवार त्र.स​</Th>
-            <Th fontWeight={"semibold"} fontSize={"15px"}>प्रयोगकर्ताको नाम​</Th>
-            <Th fontWeight={"semibold"} fontSize={"15px"}>वार्ड न​</Th>
-            <Th fontWeight={"semibold"} fontSize={"15px"}>बस्तिको नाम​​</Th>
-            <Th fontWeight={"semibold"} fontSize={"15px"}>पेश मिती​</Th>
-            <Th fontWeight={"semibold"} fontSize={"15px"}>कार्य​ </Th>​
+      <Table marginTop={"2%"} backgroundColor={"white" }  >
+        <Thead >
+          <Tr height={"50px"} bg="#081A51">
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">परिवार क्र.सं.</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">प्रयोगकर्ताको नाम​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">वडा नं.</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">बस्तिको नाम​​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">पेश मिती​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"} color="white">कार्य​ </Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -127,13 +126,13 @@ export default function page() {
               <Td fontSize={"14px"}>{i.address}</Td>
               <Td fontSize={"14px"}>{i.date}</Td>
               <Td>
-                <ViewIcon sx={{ size: "25px" }} />
-                {/* <DeleteIcon
+                {/* <ViewIcon sx={{ size: "25px" }} /> */}
+                <DeleteIcon
                   sx={{
                     marginLeft: "5%",
                     size: "20px",
                   }}
-                /> */}
+                />
                 <EditIcon
                   sx={{
                     marginLeft: "5%",
