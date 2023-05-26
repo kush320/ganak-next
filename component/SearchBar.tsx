@@ -11,8 +11,8 @@ import { Search2Icon } from "@chakra-ui/icons";
 
 const SearchBar = () => {
   return (
-    <>
-      <InputGroup borderRadius={"5px"} width={"100%"} marginLeft={"93.6%"}>
+  
+      <InputGroup borderRadius={"5px"} >
         <InputLeftElement
           pointerEvents="none"
           children={<Search2Icon color="gray.600" />}
@@ -23,19 +23,19 @@ const SearchBar = () => {
           placeholder="खोजि गर्नुहोस्..."
           border="1px solid #949494"
         />
-        <InputRightAddon p={0} border="none">
+        {/* <InputRightAddon p={0} border="none">
           <Button
             backgroundColor={"#081A51"}
             borderLeftRadius={0}
-            borderRightRadius={3.3}
+            borderRightRadius={"5px"}
             border="1px solid #949494"
             color={"white"}
           >
             खोजि गर्नुहोस्
           </Button>
-        </InputRightAddon>
+        </InputRightAddon> */}
       </InputGroup>
-    </>
+  
   );
 };
 

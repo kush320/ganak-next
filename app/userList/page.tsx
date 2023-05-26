@@ -12,6 +12,7 @@ import {
   TableCaption,
   Box,
   Text,
+  Stack,
   Avatar,
   TableContainer,
   Button,
@@ -34,30 +35,32 @@ const data = [
 
 export default function page() {
   return (
-    <TableContainer marginLeft={"2%"} marginTop={"5%"} marginRight={"2%"}>
+    <TableContainer marginLeft={"2%"} marginTop={"2%"} marginRight={"2%"}>
       <HStack>
         <Box>
           <Text fontSize={"24px"} fontWeight={"bold"}>
             प्रयोगकर्ता सूचि
           </Text>
         </Box>
-        <Box>
-          <SearchBar />
+        <Box width={"100%"}>
+          <Stack marginLeft={"70%"}>
+            <SearchBar />
+          </Stack>
         </Box>
       </HStack>
       <Table size="sm" marginTop={"1%"} backgroundColor={"white"}>
-        <Thead >
+        <Thead>
           <Tr height={"50px"} bg="#EFEFEF">
-            <Th fontSize={"20px"}>नाम​</Th>
-            <Th fontSize={"20px"}>आइदि</Th>
-            <Th fontSize={"20px"}>सम्पर्क​</Th>
-            <Th fontSize={"20px"}>कार्य​</Th>​
+            <Th fontWeight={"semibold"} fontSize={"15px"}>नाम​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>आइदि</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>सम्पर्क​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>कार्य​</Th>​
           </Tr>
         </Thead>
         <Tbody>
           {data.map((i) => (
             <Tr>
-              <Td>
+              <Td fontSize={"14px"}>
                 {" "}
                 <Avatar
                   borderRadius={"30%"}
@@ -68,8 +71,8 @@ export default function page() {
                 />
                 {i.name}
               </Td>
-              <Td >{i.id}</Td>
-              <Td>{i.contact}</Td>
+              <Td fontSize={"14px"}>{i.id}</Td>
+              <Td fontSize={"14px"}>{i.contact}</Td>
               <Td>
                 <ViewIcon />
                 <DeleteIcon

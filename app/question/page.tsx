@@ -1,6 +1,14 @@
 "use client";
 import React from "react";
-import { Box, Container, Text, Stack, Select, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Text,
+  Stack,
+  Select,
+  Input,
+  HStack,
+} from "@chakra-ui/react";
 import { Radio, RadioGroup } from "@chakra-ui/react";
 import { Table, Thead, Tr, Th, Td, Tbody } from "@chakra-ui/react";
 
@@ -19,8 +27,11 @@ const question = () => {
       borderRadius={"10px"}
       centerContent
     >
-      <Text textAlign={"center"} fontSize={"bold"} marginTop={"5%"}>
-        अनुसूची १ घरधुरी सर्वेक्षण फारमको नमुना (दफा १० (३) ख सँग सम्बन्धित)
+      <Text textAlign={"center"} fontWeight={"bold"} marginTop={"5%"}>
+        अनुसूची
+      </Text>
+      <Text textAlign={"center"} fontWeight={"bold"} marginTop={"1%"}>
+        १ घरधुरी सर्वेक्षण फारमको नमुना (दफा १० (३) ख सँग सम्बन्धित)
       </Text>
       <Box
         marginTop={"2%"}
@@ -28,30 +39,47 @@ const question = () => {
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
+        borderRadius={"5px"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
-          वडा नं.
-        </Text>
-        <Text marginLeft={"5%"}>बस्तीको नाम</Text>
-        <Text marginLeft={"5%"}>परिवार क्र.सं</Text>
+        <HStack marginTop={"2%"}>
+          <Text marginLeft={"5%"} fontWeight={"bold"}>
+            वडा नं. :
+          </Text>
+          <Input marginLeft={"45%"} variant="flushed" width={"40%"} />
+        </HStack>
+        <HStack>
+          <Text marginLeft={"5%"} fontWeight={"bold"}>
+            बस्तीको नाम :
+          </Text>
+          <Input marginLeft={"45%"} variant="flushed" width={"40%"} />
+        </HStack>
+        <HStack marginBottom={"5%"}>
+          <Text marginLeft={"5%"} fontWeight={"bold"}>
+            परिवार क्र.सं :
+          </Text>
+          <Input marginLeft={"85%"} variant="flushed" width={"40%"} />
+        </HStack>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
         bg="#f8f9ff"
+        borderRadius={"5px"}
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
-          १. परिवार मूलीको नाम
-        </Text>
-        <Input marginLeft={"5%"} variant="flushed" width={"90%"} />
-        <Text marginLeft={"5%"} marginTop={"2%"} fontSize={"bold"}>
+        <HStack marginTop={"2%"}>
+          <Text marginLeft={"5%"} fontWeight={"bold"}>
+            १. परिवार मूलीको नाम
+          </Text>
+          <Input variant="flushed" width={"40%"} />
+        </HStack>
+        <Text marginLeft={"5%"} marginTop={"2%"} fontWeight={"bold"}>
           लिङ्ग
         </Text>
-        <RadioGroup onChange={setValue} value={value}>
+        <RadioGroup onChange={setValue} value={value} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">महिला</Radio>
             <Radio value="2">पुरुष</Radio>
@@ -59,7 +87,7 @@ const question = () => {
           </Stack>
         </RadioGroup>
       </Box>
-      <Box
+      {/* <Box
         marginTop={"2%"}
         width={"85%"}
         bg="#f8f9ff"
@@ -72,22 +100,29 @@ const question = () => {
         </Text>
         <Text marginLeft={"5%"}>बस्तीको नाम</Text>
         <Text marginLeft={"5%"}>परिवार क्र.सं</Text>
-      </Box>
+      </Box> */}
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २. जाति
         </Text>
-        <Select marginLeft={"5%"} width={"40%"} placeholder="जाति छानुहोस्">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select
+          marginLeft={"5%"}
+          width={"40%"}
+          placeholder="जाति छानुहोस्"
+          marginBottom={"5%"}
+        >
+          <option value="option1">ब्रह्मिन् </option>
+          <option value="option2">क्शत्रिय</option>
+          <option value="option3">वैश्य</option>
+          <option value="option3">षुद्र​</option>
         </Select>
       </Box>
       <Box
@@ -98,24 +133,32 @@ const question = () => {
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३. धर्म
         </Text>
-        <Select marginLeft={"5%"} width={"40%"} placeholder="जाति छानुहोस्">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <Select
+          marginLeft={"5%"}
+          width={"40%"}
+          placeholder="धर्म छानुहोस्"
+          marginBottom={"5%"}
+        >
+          <option value="option1">हिन्दुइस्म्</option>
+          <option value="option2">बुद्धिस्म्</option>
+          <option value="option3">ईस्लम्</option>
+          <option value="option3">ईस्लम्</option>
+          <option value="option3">अन्य​</option>
         </Select>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"}>
           ३. परिवार संख्या
         </Text>
         <Table borderColor={"black"}>
@@ -128,27 +171,36 @@ const question = () => {
             </Tr>
           </Thead>
           <Tbody>
-            <Td></Td>
-            <Td></Td>
-            <Td></Td>
-            <Td></Td>
+            <Td>
+              <Input variant="flushed" width={"60%"} />
+            </Td>
+            <Td>
+              <Input variant="flushed" width={"60%"} />
+            </Td>
+            <Td>
+              <Input variant="flushed" width={"60%"} />
+            </Td>
+            <Td>
+              <Input variant="flushed" width={"60%"} />
+            </Td>
           </Tbody>
         </Table>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४. परिवारको कुनै सदस्य विरामी भएमा उपचारका लागि सबैभन्दा पहिला कहाँ
           जानुहुन्छ ?
         </Text>
 
-        <RadioGroup onChange={setData} value={data}>
+        <RadioGroup onChange={setData} value={data} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">लामा, धामी, झाँक्री</Radio>
             <Radio value="2">औषधि पसल</Radio>
@@ -160,16 +212,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ५ . नजिकको स्वास्थ्य संस्थामा पुग्न लाग्ने समय
         </Text>
 
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">
               स्वास्थ्य चौकी पुग्न लाग्ने समय (१५ मिनेट – ३० मिनेट – १ घण्टा – १
@@ -185,16 +238,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ६. वितेको २ बर्षभित्र जन्मेका बालबालिकाको विवरण
         </Text>
 
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">जन्मेको जीवित शिशुको जम्मा संख्या:</Radio>
             <Radio value="2">जन्मेको १ घण्टाभित्र दुध खुवाएको संख्या:</Radio>
@@ -206,22 +260,25 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ७. बितेको १ वर्षभित्रको तपाईको परिवारमा रहेका गर्भवती महिलाको
           स्वास्थ्य अवस्था बारे जानकारी
         </Text>
-        <Text marginLeft={"5%"}>क. कति पटक गर्भवती परिक्षण गरेको छ?</Text>
+        <Text marginLeft={"5%"} fontWeight={"bold"}>
+          क. कति पटक गर्भवती परिक्षण गरेको छ?
+        </Text>
         <Input marginLeft={"5%"} variant="flushed" width={"90%"} />
-        <Text marginLeft={"5%"} marginTop="2%">
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ख. प्रसुति कहाँ भएको हो?
         </Text>
 
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">स्वास्थ्य संस्थामा</Radio>
             <Radio value="2">घरमा स्वास्थ्य कर्मीको सहयोगमा</Radio>
@@ -234,12 +291,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ८. तपाईको परिवारको १८ वर्षभन्दा मुनिको सदस्यलाई कुनै दीर्घ रोग लागेको
           छ ?
         </Text>
@@ -249,10 +307,10 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि लागेको छ भने कुन रोग लागेको थियो?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क्यान्सर</Radio>
             <Radio value="2">मधुमेह(चिनिरोग)</Radio>
@@ -265,12 +323,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ९. तपाईको परिवारमा दीर्घ रोगको कारण विगत १० वर्षमा १८ वर्ष भन्दामुनिका
           कुनै सदस्यको मृत्यु भएको छ ?
         </Text>
@@ -280,10 +339,10 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि छ भने कुन रोगको कारण मृत्यु भएको थियो?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क्यान्सर</Radio>
             <Radio value="2">मधुमेह(चिनिरोग)</Radio>
@@ -296,12 +355,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १०. बितेको १ वर्षभित्र तपाईंको परिवारमा ५ वर्षमुनिका कुनै बालबालिकाको
           मृत्यु भएको छ?
         </Text>
@@ -311,32 +371,54 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि छ भने कतिजनाको मृत्यु भएको थियो र के कारणबाट मृत्यु भएको थियो ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
-          <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
-            <Radio value="1">क्यान्सर</Radio>
-            <Radio value="2">मधुमेह(चिनिरोग)</Radio>
-            <Radio value="3">मुटु</Radio>
-            <Radio value="4">मृगौला</Radio>
-            <Radio value="5">अन्य</Radio>
-          </Stack>
-        </RadioGroup>
+        <Table borderColor={"black"} marginBottom={"5%"}>
+          <Thead>
+            <Tr>
+              <Th>संख्या</Th>
+              <Th>मृत्यु हुनाको कारण​</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Input variant="flushed" width={"60%"} />
+              </Td>
+              <Td>
+                <RadioGroup
+                  onChange={setClinic}
+                  value={clinic}
+                  marginBottom={"5%"}
+                >
+                  <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+                    <Radio value="1">क्यान्सर</Radio>
+                    <Radio value="2">मधुमेह(चिनिरोग)</Radio>
+                    <Radio value="3">मुटु</Radio>
+                    <Radio value="4">मृगौला</Radio>
+                    <Radio value="5">अन्य</Radio>
+                  </Stack>
+                </RadioGroup>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ११. दुई बालबालिका चिन्ह भएको आयोडिनयुक्त नुन प्रयोग गर्ने गर्नुभएको छ
           ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -346,17 +428,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १२. ५ बर्ष मुनिका बालबालिकाले पोषिलो खाना (दिनको कम्तिमा ३ पटक दुघ,
           लिटो, भात, फलफुल र सागसव्जी) खान पाउँछन्? दुई बालबालिका चिन्ह भएको
           आयोडिनयुक्त नुन प्रयोग गर्ने गर्नुभएको छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">पाउँछन्</Radio>
             <Radio value="2">पाउँदैनन्</Radio>
@@ -366,16 +449,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १३. तपाईंको परिवारका १ वर्ष मुनिकाको मासिक र १ वर्ष भन्दा माथि ५ वर्ष
           सम्मका बालबालिकाहरुको त्रैमासिक रुपमा तौल लिने गरिएको छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -385,15 +469,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १४. आफ्नो बच्चाको जन्मदर्ता गराउनु भएको छ कि छैन?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">गराएको</Radio>
             <Radio value="2">नगराएको</Radio>
@@ -404,29 +489,48 @@ const question = () => {
         marginTop={"2%"}
         width={"85%"}
         bg="#f8f9ff"
+        borderRadius={"5px"}
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १५. गएको ३ वर्षभित्र तपाईंको परिवारमा कसैको विवाह भएको छ कि छैन?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
-            <Radio value="1">गराएको</Radio>
-            <Radio value="2">नगराएको</Radio>
+            <Radio value="1">छ</Radio>
+            <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
+          छ भने
+        </Text>
+        <Table borderColor={"black"} marginBottom={"5%"}>
+          <Thead>
+            <Tr>
+              <Th>उमेर</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Input variant="flushed" width={"60%"} />
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १६. तपाईको परिवारका १८ वर्षसम्मका बालबालिका अरुको घरमा काम गर्न बसेका
           छन्?
         </Text>
@@ -436,10 +540,10 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि छन् भने के मा काम गर्छन?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">बालभरिया</Radio>
             <Radio value="2">घरेलु बालश्रम अर्काको घरमा काम गर्ने</Radio>
@@ -453,17 +557,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १७. तपाईको परिवारका बालबालिकाहरुले कस्ता प्रकारका बालश्रम गरिरहेका छन्
           ?
         </Text>
 
-        <RadioGroup onChange={setData} value={data}>
+        <RadioGroup onChange={setData} value={data} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">बालभरिया</Radio>
             <Radio value="2">घरेलु बालश्रम अर्काको घरमा काम गर्ने</Radio>
@@ -477,17 +582,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १८. बालबालिकाहरु घरबाहिर काम गरेको भए गरेको ठाउँमा के कस्तो समस्या
           भोग्ने गरेका छन्?
         </Text>
 
-        <RadioGroup onChange={setData} value={data}>
+        <RadioGroup onChange={setData} value={data} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">गाली+गलौज</Radio>
             <Radio value="2">कुटपिट</Radio>
@@ -502,16 +608,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           १९. तपाईंको परिवारमा बालबालिकाले कमजोरी गरेमा के गर्नु हुन्छ ?
         </Text>
 
-        <RadioGroup onChange={setData} value={data}>
+        <RadioGroup onChange={setData} value={data} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">गाली</Radio>
             <Radio value="2">कुटपीट</Radio>
@@ -528,12 +635,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २०. तपाईंको घरमा छोरा र छोरीमा कुनै फरक व्यवहार गर्ने गर्नुभएको छ ?
         </Text>
         <RadioGroup onChange={setClinic} value={clinic}>
@@ -542,10 +650,10 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि छ भने,
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">शिक्षामा</Radio>
             <Radio value="2">खानपिनमा</Radio>
@@ -558,17 +666,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २१ एक वर्षभित्र तपाईंको परिवारमा महिला तथा बालबालिका उपर हिंसा तथा
           सामाजिक कुरिती सम्बन्धी निम्न कुनै घटना घटेका छन+छैनन् ?
         </Text>
 
-        <RadioGroup onChange={setData} value={data}>
+        <RadioGroup onChange={setData} value={data} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">दाईजोसम्बन्धी</Radio>
             <Radio value="2">वहुविवाह</Radio>
@@ -583,12 +692,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २२. तपाईंको परिवारका कुनै बालबालिका बालगृह वा कुनै संस्थामा बसेका छन्
           ?
         </Text>
@@ -598,7 +708,9 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"}>यदि छन् भन कहा?</Text>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
+          यदि छन् भन कहा?
+        </Text>
         <Input
           marginLeft={"5%"}
           marginBottom={"5%"}
@@ -609,15 +721,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २३. तपाईंलाई बाल अधिकारको बारेमा जानकारी छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -628,25 +741,26 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २४. तपाईंको परिवारका कुनै बालबालिकामा लागू पदार्थ दुव्र्यसनको लत रहे छ
           कि छैन ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           छन् भने?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">धुम्रपान गर्नेको संख्या: </Radio>
             <Radio value="2">मद्यपान गर्नेको संख्या:</Radio>
@@ -657,15 +771,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २५. बालबालिका बस्ने, पढ्ने कोठा अलग्गै छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -675,15 +790,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २६. मानिस बस्ने घर (मूल घर) र गाईवस्तुहरु बाँध्ने गोठ अलग्गै छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -696,12 +812,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २७. तपाईको परिवारमा बाल विकास केन्द्र वा पूर्व प्रा.वि. तहमा जाने ३
           देखि ४ वर्षसम्मका बालबालिका संख्या कति छ ?
         </Text>
@@ -715,15 +832,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २८. परिवारको शैक्षिक स्थिति
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. आधारभुत तह पढ्नेको संख्या: </Radio>
             <Radio value="2">ख. कक्षा दशसम्म पढ्नेको संख्या:</Radio>
@@ -735,15 +853,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २९. विद्यालयस्तरमा अध्ययन गरिरहेका बालबालिकाको विवरण
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">१. प्रारम्भिक बालबिकास संख्या:</Radio>
             <Radio value="3"> २. आधारभुत तह संख्या:</Radio>
@@ -755,15 +874,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           २९.१ पालिका बाहिरका विद्यालयमा अध्ययनरत संख्या
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">१. प्रारम्भिक बालबिकास संख्या:</Radio>
             <Radio value="3"> २. आधारभुत तह संख्या:</Radio>
@@ -775,15 +895,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३०. घरबाट विद्यालय जान लाग्ने समय (उपयुक्त महलमा  चिन्ह लगाउनु होला)
         </Text>
-        <Table variant="simple">
+        <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
               <Th>विद्यालय</Th>
@@ -854,7 +975,7 @@ const question = () => {
                     १५-३० मिनेट{" "}
                   </Radio>
                   <Radio value="4">३० मिनेट – १ घण्टा </Radio>
-                  <Radio marginLeft={"3%"} value="5">
+                  <Radio marginLeft={"4%"} value="5">
                     १ घण्टाभन्दा बढी
                   </Radio>
                 </RadioGroup>
@@ -866,29 +987,65 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३१. बीचैमा विद्यालय जान छोडेका ६ – १५ वर्ष उमेर समूहका बालबालिकाहरुका
           संख्या र कारण
         </Text>
+        <Table variant="simple" marginBottom={"5%"}>
+          <Thead>
+            <Tr>
+              <Th>बालक/बालिका</Th>
+              <Th>विद्यालय छोड्नुको कारण</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Radio value="1">बालक</Radio>
+              </Td>
+              <Td>
+                <Input variant="flushed" />
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Radio value="1">बालिका</Radio>
+              </Td>
+              <Td>
+                <Input variant="flushed" />
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <Text marginLeft={"2%"}>जम्मा</Text>
+              </Td>
+              <Td>
+                <Input variant="flushed" />
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
       </Box>
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३२. परिवारमा बालबालिकासँग सम्बन्धित कुनै विषयमा निर्णय गर्दा उनीहरुलाई
           पनि सहभागी गराउने गर्नु भएको छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">क. गराउने गरेको छ</Radio>
             <Radio value="2">ख. गराउने गरेको छैन</Radio>
@@ -898,12 +1055,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३३. तपाईंको परिवारका बालबालिकाहरु बाल क्लव÷संगठन आदिमा आबद्धता रहेका
           छन् ? छन भने क्लबको नाम उल्लेख गर्नुहोस।
         </Text>
@@ -917,16 +1075,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३४. तपाईका घरका १८ वर्षभन्दा कम उमेरका कतिजना बालबालिका देहायको
           निकायमा प्रतिनिधि वा सदस्य रहेका छन् ? यदी छन भने कुन मा?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">
               क. स्थानिय तह/योजना तर्जुमा वा कार्यान्वयन समिति
@@ -947,16 +1106,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३५. तपाईको परिवारका कुनै सदस्य स्थानीय कुनै संघसंस्था वा समूहमा आवद्ध
           हुनुहुन्छ ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. सामुदायिक संस्था</Radio>
             <Radio value="3">ख. कृषक समूह</Radio>
@@ -973,16 +1133,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३६. तपाइको परिवारमा बाल संरक्षण, बालअधिकार, बालमैत्रि र बालविकास
           सम्बन्धित तालिम लिनु भएको छ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
             <Radio value="1">छ</Radio>
             <Radio value="2">छैन</Radio>
@@ -992,15 +1153,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३७. परिवारको मुख्य पेशा (एकमा मात्र चिन्ह लगाउने)
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. कृषि +पशुपालन+फलफूल​ खेती</Radio>
             <Radio value="2">ख. व्यापार व्यवसाय</Radio>
@@ -1014,21 +1176,27 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३८. आजभन्दा पाँच वर्ष पहिले तपाईंको परिवारको बसोवास कहाँ थियो ?
         </Text>
         <Radio value="1" marginLeft={"5%"}>
           क. अन्यत्र स्थानमा
         </Radio>
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text
+          marginLeft={"5%"}
+          fontSize={"bold"}
+          fontWeight={"bold"}
+          marginTop={"2%"}
+        >
           ख. यसै स्थानमा अन्यत्र स्थानबाट आएको भए यहाँ किन आउनु भएको ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. सहरी सुविधाको लागि</Radio>
             <Radio value="2">ख. द्वन्दका कारण</Radio>
@@ -1044,17 +1212,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३९. घरको अवस्था : (एकभन्दा बढी घर भएमा मूल घरको विवरणका आधारमा चिन्ह
           लगाउने)
         </Text>
 
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. खर वा फुसको छानो भएको</Radio>
             <Radio value="2">ख. टायल, झिँगटी वा स्लेटको छानो भएको</Radio>
@@ -1066,16 +1235,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४०. तपाईंको घरमा खाना पकाउन प्रयोग हुने प्रमुख इन्धन कुन हो ?
         </Text>
 
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. दाउरा</Radio>
             <Radio value="2">ख. गोवरग्याँस</Radio>
@@ -1088,16 +1258,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४१. तपार्इंको घरमा संचारका साधनहरु के के रहेका छन् ? (वहु उत्तर) :
         </Text>
 
-        <RadioGroup>
+        <RadioGroup marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio>क. रेडियो</Radio>
             <Radio>ख. टि.भि.</Radio>
@@ -1112,17 +1283,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४२. तपाईंको परिवारका सदस्यहरु कुन कुन पेशा (रोजगारी) मा संलग्न
           हुनुहुन्छ ?
         </Text>
 
-        <RadioGroup>
+        <RadioGroup marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio>क. कृषि</Radio>
             <Radio>ख. व्यापार</Radio>
@@ -1136,16 +1308,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४३. तपाईको परिवारमा १८ वर्षभन्दा कम उमेरका शारीरिक तथा मानसिक हिसाबले
           अपांगता भएका सदस्यहरु भएमा तलको विवरण दिनुहोस् ।
         </Text>
-        <Table variant="simple">
+        <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
               <Th>बालक/बालिका</Th>
@@ -1158,14 +1331,14 @@ const question = () => {
                 <Radio value="1">बालक</Radio>
               </Td>
 
-              <Td>
+              <Td >
                 <RadioGroup>
                   <Radio value="2">शारीरिक अपाङ्गता </Radio>
-                  <Radio value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
+                  <Radio marginLeft={"11%"} value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
                   <Radio value="4">सुस्त श्रवण तथा बहिरा </Radio>
-                  <Radio value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
+                  <Radio marginLeft={"5.5%"} value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
                   <Radio value="4">मानसिक/बौद्दिकअपाङ्गता </Radio>
-                  <Radio value="4">श्रवण र दृष्टिविहिन (दुवै) </Radio>
+                  <Radio  value="4">श्रवण र दृष्टिविहिन (दुवै) </Radio>
                   <Radio value="4">बहु अपाङ्गता </Radio>
                 </RadioGroup>
               </Td>
@@ -1178,9 +1351,9 @@ const question = () => {
               <Td>
                 <RadioGroup>
                   <Radio value="2">शारीरिक अपाङ्गता </Radio>
-                  <Radio value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
+                  <Radio marginLeft={"11%"} value="3">दृष्टिविहिन र न्यन दृष्टिविहिन</Radio>
                   <Radio value="4">सुस्त श्रवण तथा बहिरा </Radio>
-                  <Radio value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
+                  <Radio marginLeft={"5.5%"} value="5">स्वर बोलाइसम्बन्धी अपाङ्गता</Radio>
                   <Radio value="4">मानसिक/बौद्दिकअपाङ्गता </Radio>
                   <Radio value="4">श्रवण र दृष्टिविहिन (दुवै) </Radio>
                   <Radio value="4">बहु अपाङ्गता </Radio>
@@ -1193,17 +1366,18 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४४. तपाईंको परिवारलाई आफ्नो उत्पादन÷आम्दानीले वर्षमा कति महिना खान
           पुग्छ ?
         </Text>
 
-        <RadioGroup>
+        <RadioGroup marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio>क. ३ महिनाभन्दा कम खान पुग्ने</Radio>
             <Radio>ख. ३ – ६ महिना खान पुग्ने</Radio>
@@ -1216,16 +1390,17 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४५. ऋण लिएको भए कुन उद्देश्यका लागि लिनु भएको हो ?
         </Text>
 
-        <RadioGroup>
+        <RadioGroup marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio>क. घरायसी कार्य वा घर खर्च</Radio>
             <Radio>ख. कृषि तथा पशुपालन व्यवसाय गर्न</Radio>
@@ -1243,15 +1418,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४६. तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?
         </Text>
-        <Table variant="simple">
+        <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
               <Th>कार्य</Th>
@@ -1310,12 +1486,13 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४७. विगत ३ वर्ष भित्रमा तपाईंको परिवारमा कति मानिसहरु प्रकोपवाट
           प्रभावित भएका छन् कि छैनन?
         </Text>
@@ -1325,10 +1502,10 @@ const question = () => {
             <Radio value="2">छैन</Radio>
           </Stack>
         </RadioGroup>
-        <Text marginLeft={"5%"} fontSize={"bold"} marginTop={"2%"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदी छ भने के बाट?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">बाढी </Radio>
             <Radio value="2">पहिरो</Radio>
@@ -1347,15 +1524,16 @@ const question = () => {
       <Box
         marginTop={"2%"}
         width={"85%"}
+        borderRadius={"5px"}
         bg="#f8f9ff"
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४८. तपाइको बालबालिका पढ्ने विद्यालय कुन प्रकोपको जोखिममा रहेको छ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. बाढी</Radio>
             <Radio value="2">ख. पहिरो</Radio>
@@ -1369,14 +1547,15 @@ const question = () => {
         marginTop={"2%"}
         width={"85%"}
         bg="#f8f9ff"
+        borderRadius={"5px"}
         color="black"
         marginLeft={"5%"}
         marginRight={"5%"}
       >
-        <Text marginLeft={"5%"} fontSize={"bold"}>
+        <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४९. विद्यालय जाँदा आउँदा बालबालिकालाई के को जोखिम रहेको छ?
         </Text>
-        <RadioGroup onChange={setClinic} value={clinic}>
+        <RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
           <Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
             <Radio value="1">क. बाढी</Radio>
             <Radio value="2">ख. पहिरो</Radio>

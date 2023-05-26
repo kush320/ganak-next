@@ -19,12 +19,12 @@ export default function RootLayout({
 }) {
   const router = usePathname();
 
-  const noNav = ["/login", "/register"];
+  // const noNav = ["/login", "/register"];
   return (
     <html lang="en">
       <body className={inter.className}>
         <ChakraProvider>
-          {router !== "/login" && "/register" ? <Navbar children={children}/>: children}
+          {router !== "/register" && router !== "/login" ? <Navbar children={children}/>: children}
         </ChakraProvider>
       </body>
     </html>

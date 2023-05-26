@@ -12,6 +12,7 @@ import {
   TableCaption,
   Box,
   Text,
+  Stack,
   TableContainer,
   Button,
   HStack,
@@ -20,25 +21,77 @@ import SearchBar from "@/component/SearchBar";
 import Navbar from "@/component/Navbar";
 
 const data = [
-  { id: "१", name: "राम​", ward: "१", address:"पेप्सिकोला", date:"२०८०।०३।२०",},
-  { id: "१", name: "राम​", ward: "२", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "९", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "६", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "७", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "४", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "८", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "७", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
-  { id: "१", name: "राम​", ward: "९", address:"पेप्सिकोला", date:"२०८०।०३।२०", },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "१",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "२",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "९",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "६",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "७",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "४",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "८",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "७",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
+  {
+    id: "१",
+    name: "राम​",
+    ward: "९",
+    address: "पेप्सिकोला",
+    date: "२०८०।०३।२०",
+  },
 ];
 
 export default function page() {
   return (
-    
     <TableContainer
       // width={"70%"}
       marginLeft={"2%"}
-      
-      marginTop={"5%"}
+      marginTop={"2%"}
       marginRight={"2%"}
     >
       <HStack>
@@ -47,31 +100,33 @@ export default function page() {
             सूचि
           </Text>
         </Box>
-        <Box>
-          <SearchBar/>
+        <Box width={"100%"}>
+          <Stack marginLeft={"70%"} >
+          <SearchBar />
+          </Stack>
         </Box>
       </HStack>
       <Table size="sm" marginTop={"2%"} backgroundColor={"white"}>
         <Thead>
           <Tr height={"50px"} bg="#EFEFEF">
-            <Th fontSize={"20px"}>परिवार त्र.स​</Th>
-            <Th fontSize={"20px"}>प्रयोगकर्ताको नाम​</Th>
-            <Th fontSize={"20px"}>वार्ड न​</Th>
-            <Th fontSize={"20px"}>बस्तिको नाम​​</Th>
-            <Th fontSize={"20px"}>पेश मिती​</Th>
-            <Th fontSize={"20px"}>कार्य​ </Th>​
+            <Th fontWeight={"semibold"} fontSize={"15px"}>परिवार त्र.स​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>प्रयोगकर्ताको नाम​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>वार्ड न​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>बस्तिको नाम​​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>पेश मिती​</Th>
+            <Th fontWeight={"semibold"} fontSize={"15px"}>कार्य​ </Th>​
           </Tr>
         </Thead>
         <Tbody>
           {data.map((i) => (
             <Tr>
-              <Td>{i.id}</Td>
-              <Td>{i.name}</Td>
-              <Td>{i.ward}</Td>
-              <Td>{i.address}</Td>
-              <Td>{i.date}</Td>
+              <Td fontSize={"14px"}>{i.id}</Td>
+              <Td fontSize={"14px"}>{i.name}</Td>
+              <Td fontSize={"14px"}>{i.ward}</Td>
+              <Td fontSize={"14px"}>{i.address}</Td>
+              <Td fontSize={"14px"}>{i.date}</Td>
               <Td>
-                <ViewIcon />
+                <ViewIcon sx={{ size: "20px" }} />
                 <DeleteIcon
                   sx={{
                     marginLeft: "5%",
