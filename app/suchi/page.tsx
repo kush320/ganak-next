@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ViewIcon, DeleteIcon, EditIcon, Search2Icon } from "@chakra-ui/icons";
 import {
   Table,
@@ -87,6 +88,7 @@ const data = [
 ];
 
 export default function page() {
+  const router = useRouter()
   return (
     <div>
     <TableContainer
@@ -138,6 +140,7 @@ export default function page() {
                     marginLeft: "5%",
                     size: "20px",
                   }}
+                  onClick={()=> router.push("/question")}
                 />
               </Td>
             </Tr>

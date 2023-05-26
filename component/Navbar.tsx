@@ -97,7 +97,7 @@ export default function Navbar({ children }) {
 
           <Box height={"73"}>
             <Text marginTop={"18%"} fontWeight={"semibold"}>
-              राम दामना​
+              राम चोर
             </Text>
             <Text fontSize={"14px"}>ब्यबस्थापक</Text>
           </Box>
