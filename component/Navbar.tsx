@@ -73,7 +73,7 @@ export default function Navbar({ children }) {
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="/list">
+            <Link href="/suchi">
               <Text color={"white"} marginTop={"10%"}>
                 <ListIcon marginRight={"5%"}>
                   <Icon as={FiCalendar} size={"25px"} color="white" />
@@ -96,8 +96,8 @@ export default function Navbar({ children }) {
             src="https://bit.ly/ryan-florence"
           />
 
-          <Box>
-            <Text marginTop={"3%"} fontWeight={"semibold"}>
+          <Box height={"73"}>
+            <Text marginTop={"18%"} fontWeight={"semibold"}>
               राम दामना​
             </Text>
             <Text fontSize={"14px"}>ब्यबस्थापक</Text>
@@ -105,11 +105,11 @@ export default function Navbar({ children }) {
           <Box width={"10%"}>
             <Stack marginLeft={"70%"}>
 
-          <Divider  orientation="vertical" h="30px" borderColor={"blackAlpha.300"} />
+          <Divider  orientation="vertical" h="40px" borderColor={"blackAlpha.300"} />
           </Stack>
           </Box>
 
-          <Box width={"50%"} >
+          <Box width={"45%"} >
             
             
             <SearchBar />

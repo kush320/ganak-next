@@ -150,7 +150,7 @@ export default function page() {
             पहिले नै खाता छ् ​?
           </GridItem>
           <GridItem w="100%" marginLeft={"7%"} color={"#3547CE"}>
-            साइन गर्नुहोस्
+            साइन इन गर्नुहोस्
           </GridItem>
         </Grid>
       </Card>

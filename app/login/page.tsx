@@ -21,7 +21,7 @@ export default function Home() {
       overflow={"hidden"}
       backgroundColor={"#f8f9ff"}
     >
-      <Box width={"50%"} backgroundImage={"mountain.svg"}>
+      <Box width={"50%"} backgroundImage={"mountain.svg"} borderRightRadius={"10px"}>
         <Box>
           <Center>
             <Image marginTop={"35vh"} w={"30%"} src={"logo.png"}></Image>

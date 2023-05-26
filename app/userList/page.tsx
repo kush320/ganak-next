@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ViewIcon, DeleteIcon, EditIcon, Search2Icon } from "@chakra-ui/icons";
+import { ViewIcon, DeleteIcon, EditIcon, Search2Icon, ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Table,
   Thead,
@@ -19,6 +19,7 @@ import {
   ChakraBaseProvider,
   HStack,
 } from "@chakra-ui/react";
+import { ChevronLeftIcon } from '@chakra-ui/icons'
 import SearchBar from "@/component/SearchBar";
 
 const data = [
@@ -35,6 +36,7 @@ const data = [
 
 export default function page() {
   return (
+    <div>
     <TableContainer marginLeft={"2%"} marginTop={"2%"} marginRight={"2%"}>
       <HStack>
         <Box>
@@ -92,6 +94,11 @@ export default function page() {
           ))}
         </Tbody>
       </Table>
+      {/* <HStack marginLeft={"80%"} >
+      <ChevronLeftIcon/>
+      <ChevronRightIcon/>
+      </HStack> */}
     </TableContainer>
+    </div>
   );
 }

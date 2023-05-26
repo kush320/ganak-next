@@ -28,10 +28,13 @@ const question = () => {
       centerContent
     >
       <Text textAlign={"center"} fontWeight={"bold"} marginTop={"5%"}>
-        अनुसूची
+        अनुसूची १
       </Text>
       <Text textAlign={"center"} fontWeight={"bold"} marginTop={"1%"}>
-        १ घरधुरी सर्वेक्षण फारमको नमुना (दफा १० (३) ख सँग सम्बन्धित)
+       घरधुरी सर्वेक्षण फारमको नमुना
+      </Text>
+      <Text textAlign={"center"}  marginTop={"1%"}>
+       (दफा १० (३) ख सँग सम्बन्धित)
       </Text>
       <Box
         marginTop={"2%"}
@@ -161,6 +164,7 @@ const question = () => {
         <Text marginLeft={"5%"} fontWeight={"bold"}>
           ३. परिवार संख्या
         </Text>
+        <div>
         <Table borderColor={"black"}>
           <Thead>
             <Tr>
@@ -185,6 +189,7 @@ const question = () => {
             </Td>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}
@@ -374,6 +379,7 @@ const question = () => {
         <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           यदि छ भने कतिजनाको मृत्यु भएको थियो र के कारणबाट मृत्यु भएको थियो ?
         </Text>
+        <div>
         <Table borderColor={"black"} marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -404,6 +410,7 @@ const question = () => {
             </Tr>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}
@@ -506,6 +513,7 @@ const question = () => {
         <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           छ भने
         </Text>
+        <Table>
         <Table borderColor={"black"} marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -519,6 +527,7 @@ const question = () => {
               </Td>
             </Tr>
           </Tbody>
+        </Table>
         </Table>
       </Box>
       <Box
@@ -904,6 +913,7 @@ const question = () => {
         <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ३०. घरबाट विद्यालय जान लाग्ने समय (उपयुक्त महलमा  चिन्ह लगाउनु होला)
         </Text>
+        <div>
         <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -983,6 +993,7 @@ const question = () => {
             </Tr>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}
@@ -997,6 +1008,7 @@ const question = () => {
           ३१. बीचैमा विद्यालय जान छोडेका ६ – १५ वर्ष उमेर समूहका बालबालिकाहरुका
           संख्या र कारण
         </Text>
+        <div>
         <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -1031,6 +1043,7 @@ const question = () => {
             </Tr>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}
@@ -1318,6 +1331,7 @@ const question = () => {
           ४३. तपाईको परिवारमा १८ वर्षभन्दा कम उमेरका शारीरिक तथा मानसिक हिसाबले
           अपांगता भएका सदस्यहरु भएमा तलको विवरण दिनुहोस् ।
         </Text>
+        <div>
         <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -1362,6 +1376,7 @@ const question = () => {
             </Tr>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}
@@ -1427,6 +1442,7 @@ const question = () => {
         <Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
           ४६. तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?
         </Text>
+        <div>
         <Table variant="simple" marginBottom={"5%"}>
           <Thead>
             <Tr>
@@ -1482,6 +1498,7 @@ const question = () => {
             </Tr>
           </Tbody>
         </Table>
+        </div>
       </Box>
       <Box
         marginTop={"2%"}

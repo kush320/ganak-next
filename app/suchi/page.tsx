@@ -88,6 +88,7 @@ const data = [
 
 export default function page() {
   return (
+    <div>
     <TableContainer
       // width={"70%"}
       marginLeft={"2%"}
@@ -96,7 +97,7 @@ export default function page() {
     >
       <HStack>
         <Box>
-          <Text textAlign={"left"} fontSize={"24px"} fontWeight={"bold"}>
+          <Text textAlign={"left"} fontSize={"24px"} fontWeight={"semibold"}>
             सूचि
           </Text>
         </Box>
@@ -118,7 +119,7 @@ export default function page() {
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((i) => (
+          {data.map((i) => ( 
             <Tr>
               <Td fontSize={"14px"}>{i.id}</Td>
               <Td fontSize={"14px"}>{i.name}</Td>
@@ -126,13 +127,13 @@ export default function page() {
               <Td fontSize={"14px"}>{i.address}</Td>
               <Td fontSize={"14px"}>{i.date}</Td>
               <Td>
-                <ViewIcon sx={{ size: "20px" }} />
-                <DeleteIcon
+                <ViewIcon sx={{ size: "25px" }} />
+                {/* <DeleteIcon
                   sx={{
                     marginLeft: "5%",
                     size: "20px",
                   }}
-                />
+                /> */}
                 <EditIcon
                   sx={{
                     marginLeft: "5%",
@@ -145,5 +146,6 @@ export default function page() {
         </Tbody>
       </Table>
     </TableContainer>
+    </div>
   );
 }
