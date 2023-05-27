@@ -40,7 +40,7 @@ const data = [
 	{ name: "राम​", id: "१०३४९८", contact: "९८४८२७९८७६" },
 ];
 
-export default function UserList() {
+export default function UsersList() {
 	return (
 		<div>
 			<TableContainer marginLeft={"2%"} marginTop={"2%"} marginRight={"2%"}>
