@@ -24,7 +24,7 @@ export default function page() {
   const [value, setValue] = React.useState("1");
   const [selectedImage, setSelectedImage] = React.useState(null);
 
-  const handleImageChange = (e) => {
+  const handleImageChange = (e:any) => {
     const file = e.target.files[0];
     setSelectedImage(file);
   };
