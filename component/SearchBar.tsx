@@ -23,17 +23,7 @@ const SearchBar = () => {
           placeholder="खोजि गर्नुहोस्..."
           border="1px solid #949494"
         />
-        {/* <InputRightAddon p={0} border="none">
-          <Button
-            backgroundColor={"#081A51"}
-            borderLeftRadius={0}
-            borderRightRadius={"5px"}
-            border="1px solid #949494"
-            color={"white"}
-          >
-            खोजि गर्नुहोस्
-          </Button>
-        </InputRightAddon> */}
+       
       </InputGroup>
   
   );
