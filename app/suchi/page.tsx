@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ViewIcon, DeleteIcon, EditIcon, Search2Icon } from "@chakra-ui/icons";
@@ -90,72 +91,75 @@ const data = [
 export default function Suchi() {
 	const router = useRouter();
 	return (
-		<div>
-			<TableContainer marginLeft={"2%"} marginTop={"2%"} marginRight={"2%"}>
-				<HStack>
-					<Box>
-						<Text textAlign={"left"} fontSize={"24px"} fontWeight={"semibold"}>
-							सूचि
-						</Text>
-					</Box>
-					<Box width={"100%"}>
-						<Stack marginLeft={"70%"}>
-							<SearchBar />
-						</Stack>
-					</Box>
-				</HStack>
-				<Table marginTop={"2%"} backgroundColor={"white"}>
-					<Thead>
-						<Tr height={"50px"} bg="#081A51">
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								परिवार क्र.सं.
-							</Th>
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								प्रयोगकर्ताको नाम​
-							</Th>
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								वडा नं.
-							</Th>
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								बस्तिको नाम​​
-							</Th>
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								पेश मिती​
-							</Th>
-							<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
-								कार्य​{" "}
-							</Th>
+		<TableContainer position={"relative"}>
+			<HStack padding={"2%"} position={"sticky"} w={"full"} top={0}>
+				<Box>
+					<Text textAlign={"left"} fontSize={"24px"} fontWeight={"semibold"}>
+						सूचि
+					</Text>
+				</Box>
+				<Box width={"100%"}>
+					<Stack marginLeft={"70%"}>
+						<SearchBar />
+					</Stack>
+				</Box>
+			</HStack>
+			<Table
+				marginTop={"1%"}
+				marginRight={"2%"}
+				marginLeft={"2%"}
+				backgroundColor={"white"}
+			>
+				<Thead>
+					<Tr height={"50px"} bg="#081A51">
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							परिवार क्र.सं.
+						</Th>
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							प्रयोगकर्ताको नाम​
+						</Th>
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							वडा नं.
+						</Th>
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							बस्तिको नाम​​
+						</Th>
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							पेश मिती​
+						</Th>
+						<Th fontWeight={"semibold"} fontSize={"15px"} color="white">
+							कार्य​{" "}
+						</Th>
+					</Tr>
+				</Thead>
+				<Tbody>
+					{data.map((i) => (
+						<Tr key={i.id}>
+							<Td fontSize={"14px"}>{i.id}</Td>
+							<Td fontSize={"14px"}>{i.name}</Td>
+							<Td fontSize={"14px"}>{i.ward}</Td>
+							<Td fontSize={"14px"}>{i.address}</Td>
+							<Td fontSize={"14px"}>{i.date}</Td>
+							<Td>
+								{/* <ViewIcon sx={{ size: "25px" }} /> */}
+								<DeleteIcon
+									sx={{
+										marginLeft: "5%",
+										size: "20px",
+									}}
+								/>
+								<EditIcon
+									sx={{
+										marginLeft: "5%",
+										size: "20px",
+									}}
+									onClick={() => router.push("/question")}
+								/>
+							</Td>
 						</Tr>
-					</Thead>
-					<Tbody>
-						{data.map((i) => (
-							<Tr key={i.id}>
-								<Td fontSize={"14px"}>{i.id}</Td>
-								<Td fontSize={"14px"}>{i.name}</Td>
-								<Td fontSize={"14px"}>{i.ward}</Td>
-								<Td fontSize={"14px"}>{i.address}</Td>
-								<Td fontSize={"14px"}>{i.date}</Td>
-								<Td>
-									{/* <ViewIcon sx={{ size: "25px" }} /> */}
-									<DeleteIcon
-										sx={{
-											marginLeft: "5%",
-											size: "20px",
-										}}
-									/>
-									<EditIcon
-										sx={{
-											marginLeft: "5%",
-											size: "20px",
-										}}
-										onClick={() => router.push("/question")}
-									/>
-								</Td>
-							</Tr>
-						))}
-					</Tbody>
-				</Table>
-			</TableContainer>
-		</div>
+					))}
+				</Tbody>
+			</Table>
+		</TableContainer>
 	);
 }

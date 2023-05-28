@@ -16,22 +16,26 @@ import {
 	HStack,
 	Divider,
 	Button,
+	Flex,
 } from "@chakra-ui/react";
 import { InfoIcon, Search2Icon, Icon } from "@chakra-ui/icons";
 import { FiCalendar, FiUser, FiAlignCenter } from "react-icons/fi";
 import SearchBar from "./SearchBar";
+import { useRouter } from "next/navigation";
+import getCurrentNepaliDate from "get-nepali-date";
 
 export default function Navbar({ children }) {
+	const router = useRouter();
 	return (
 		<Grid
 			h="100vh"
 			w={"100%"}
 			templateRows="repeat(14, 1fr)"
-			templateColumns="repeat(7, 1fr)"
+			templateColumns="repeat(10, 1fr)"
 			backgroundColor={"#f8f9ff"}
 			overflow={"hidden"}
 		>
-			<GridItem rowSpan={14} colSpan={1} bg="#081A51">
+			<GridItem rowSpan={14} colSpan={2} bg="#081A51">
 				<Center>
 					<Image alt="" marginTop={"10%"} w={"30%"} src={"logo.png"}></Image>
 				</Center>
@@ -55,69 +59,84 @@ export default function Navbar({ children }) {
 							दायस्बोर्द्
 						</Text>
 					</ListItem>
-					<ListItem>
-						<Link href={"/userList"}>
+
+					<Link href={"/users-list"}>
+						<ListItem>
 							<Text color={"white"} marginTop={"10%"}>
 								<ListIcon marginRight={"5%"}>
 									<Icon as={FiUser} size={"25px"} color="white" />
 								</ListIcon>
 								प्रयोगकर्ता
 							</Text>
-						</Link>
-					</ListItem>
-					<ListItem>
-						<Link href={"/suchi"}>
+						</ListItem>
+					</Link>
+
+					<Link href={"/suchi"}>
+						<ListItem>
 							<Text color={"white"} marginTop={"10%"}>
 								<ListIcon marginRight={"5%"}>
 									<Icon as={FiCalendar} size={"25px"} color="white" />
 								</ListIcon>
 								सूचि
 							</Text>
-						</Link>
-					</ListItem>
+						</ListItem>
+					</Link>
 				</List>
 			</GridItem>
 
-			<GridItem rowSpan={1} colSpan={6} bg="white" boxShadow={"base"}>
-				<HStack>
-					<Avatar
-						borderRadius={"30%"}
-						marginTop={"0%"}
-						marginLeft={"3%"}
-						height={"40px"}
-						name="Ryan Florence"
-						src="https://bit.ly/ryan-florence"
-					/>
+			<GridItem
+				rowSpan={2}
+				colSpan={8}
+				bg="white"
+				w={"full"}
+				boxShadow={"base"}
+			>
+				<Flex
+					justifyContent={"space-evenly"}
+					h={"full"}
+					alignItems={"center"}
+					w={"full"}
+				>
+					<Flex alignItems={"center"} gap={3}>
+						<Avatar
+							borderRadius={"30%"}
+							marginTop={"0%"}
+							marginLeft={"3%"}
+							height={"40px"}
+							name="Ryan Florence"
+							src="https://bit.ly/ryan-florence"
+						/>
 
-					<Box height={"73"}>
-						<Text marginTop={"18%"} fontWeight={"semibold"}>
-							राम चोर
-						</Text>
-						<Text fontSize={"14px"}>ब्यबस्थापक</Text>
-					</Box>
-					<Box width={"10%"}>
-						<Stack marginLeft={"70%"}>
-							<Divider
-								orientation="vertical"
-								h="40px"
-								borderColor={"blackAlpha.300"}
-							/>
-						</Stack>
-					</Box>
-
+						<Flex direction={"column"} height={"full"}>
+							<Text marginTop={"18%"} fontWeight={"semibold"}>
+								राम चोर
+							</Text>
+							<Text fontSize={"14px"}>ब्यबस्थापक</Text>
+						</Flex>
+						<Box width={"10%"}>
+							<Stack marginLeft={"70%"}>
+								<Divider
+									orientation="vertical"
+									h="40px"
+									borderColor={"blackAlpha.300"}
+								/>
+							</Stack>
+						</Box>
+					</Flex>
 					<Box width={"45%"}>
 						<SearchBar />
 					</Box>
-					{/* <Box>
-            <Nepalidate/>
-          </Box> */}
-				</HStack>
+					<Box>
+						<Text textAlign={"end"}>{getCurrentNepaliDate()}</Text>
+					</Box>
+				</Flex>
 			</GridItem>
+
 			<GridItem
 				overflow={"scroll"}
 				height={"100%"}
-				rowSpan={13}
-				colSpan={6}
+				rowSpan={12}
+				colSpan={8}
 				// bg="white"
 				bgColor={"#f8f9ff"}
 			>

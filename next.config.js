@@ -1,24 +1,24 @@
 /** @type {import('next').NextConfig} */
 
-const isAuthenticated = true
+const isAuthenticated = false
 const nextConfig = {
   async redirects() {
     return [
       {
         source: '/',
-        destination: isAuthenticated ? '/suchi' : '/login',
+        destination: '/login',
         permanent: true,
       },
-      {
-        source: '/login',
-        destination: isAuthenticated ? '/suchi' : '/login',
-        permanent: true,
-      },
-      {
-        source: '/register',
-        destination: isAuthenticated ? '/suchi' : '/register',
-        permanent: true,
-      }
+      // {
+      //   source: '/login',
+      //   destination: isAuthenticated ? '/suchi' : '/login',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/register',
+      //   destination: isAuthenticated ? '/suchi' : '/register',
+      //   permanent: true,
+      // }
     ];
   },
 
