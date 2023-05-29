@@ -6,7 +6,8 @@ export interface createUser {
 	role: string;
 	fullName: string;
 	email: string;
-	image: string;
+	// image: string;
+	confirmPassword: string;
 }
 
 export interface loginUser {

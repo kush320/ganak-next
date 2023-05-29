@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 
-const SearchBar = () => {
+const SearchBar = ({ query, setQuery }) => {
 	return (
 		<InputGroup borderRadius={"5px"}>
 			<InputLeftElement pointerEvents="none">
@@ -20,18 +20,9 @@ const SearchBar = () => {
 				type="text"
 				placeholder="खोजि गर्नुहोस्..."
 				border="1px solid #949494"
+				value={query}
+				onChange={(e) => setQuery(e.target.value)}
 			/>
-			{/* <InputRightAddon p={0} border="none">
-          <Button
-            backgroundColor={"#081A51"}
-            borderLeftRadius={0}
-            borderRightRadius={"5px"}
-            border="1px solid #949494"
-            color={"white"}
-          >
-            खोजि गर्नुहोस्
-          </Button>
-        </InputRightAddon> */}
 		</InputGroup>
 	);
 };

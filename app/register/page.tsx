@@ -8,62 +8,71 @@ import {
 	Grid,
 	GridItem,
 	Stack,
-	FormControl,
-	FormLabel,
 	Center,
 	Image,
 	Avatar,
+	FormControl,
+	FormLabel,
+	Flex,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import React from "react";
+import React, { HtmlHTMLAttributes } from "react";
 import { Radio, RadioGroup } from "@chakra-ui/react";
 import { createUser } from "@/typings";
 import toast from "react-hot-toast";
 
+async function handleCreateUser(event, newUser, image) {
+	const formData = new FormData();
+	Object.keys(newUser).forEach((key) => {
+		formData.append(key, newUser[key]);
+	});
+
+	formData.append("image", image);
+
+	event.preventDefault();
+	// if (newUser.password !== newUser.confirmPassword) {
+	// 	toast.error("Passwords don't match");
+	// }
+
+	const url = "/api/auth/register";
+
+	fetch(url, {
+		method: "POST",
+		body: formData,
+		headers: {
+			"Content-type": "multipart/form-data",
+		},
+		credentials: "include",
+	});
+	console.log(formData);
+}
+
 export default function Register() {
 	const [show, setShow] = React.useState(false);
 	const handleClick = () => setShow(!show);
-	const [value, setValue] = React.useState("1");
-	const [selectedImage, setSelectedImage] = React.useState(null);
+	const [role, setRole] = React.useState("gadak");
+	const [gender, setGender] = React.useState("male");
+	const [selectedImage, setSelectedImage] = React.useState("");
 	const [confirmPassword, setConfirmPassword] = React.useState("");
-
 	const [newUser, setNewUser] = React.useState<createUser>({
 		number: "",
 		password: "",
 		ward: "",
-		gender: "",
-		role: "",
+		gender: gender,
+		role: role,
 		fullName: "",
 		email: "",
-		image: "",
+		confirmPassword: "",
 	});
 
-	// console.log(newUser.fullName);
-
-	function handleCreateUser() {
-		if (newUser.password !== confirmPassword) {
-			toast.error("Passwords don't match");
-		}
-		const url = `/api/auth/${value === "1" ? "register-admin" : "register"}`;
-
-		fetch(url, {
-			method: "POST",
-			body: JSON.stringify(newUser),
-			headers: {
-				"Content-type": "application/json; charset=UTF-8",
-			},
-		});
-		console.log(newUser);
+	function handleImage(e) {
+		console.log(e.target.files);
+		setSelectedImage(e.target.files[0]);
 	}
-
-	const handleImageChange = (e) => {
-		const file = e.target.files[0];
-		setSelectedImage(file);
-	};
 
 	return (
 		<Box
-			height="200px"
+			height="250px"
 			bgColor={"#081A51"}
 			borderBottomLeftRadius={"80px"}
 			borderBottomRightRadius={"80px"}
@@ -71,15 +80,16 @@ export default function Register() {
 			width={"full"}
 		>
 			<Card
-				marginLeft={"30%"}
-				width={"40%"}
+				margin={"auto"}
+				marginY={"20px"}
+				width={"50%"}
+				justifyContent={"center"}
 				backgroundColor={"white"}
-				height={"400%"}
-				marginTop={"5%"}
+				// height={"400%"}
 				borderRadius={"5px"}
 				boxShadow={"2xl"}
 			>
-				<Box>
+				<Box marginY={"20px"}>
 					<Text
 						fontSize={"24px"}
 						fontWeight={"bold"}
@@ -101,161 +111,176 @@ export default function Register() {
 						></Image>
 					</Center>
 				</Box>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"5%"}>
-					पुरा नाम्
-				</Text>
-				<Input
-					marginLeft="25%"
-					borderRadius={"10px"}
-					marginTop={"1%"}
-					fontSize={"14px"}
-					required
-					type="text"
-					placeholder="पुरा नाम्"
-					sx={{ height: "50px", width: "55%" }}
-					value={newUser.fullName}
-					onChange={(e) =>
-						setNewUser((newUser) => ({
-							...newUser,
-							fullName: e.target.value,
-						}))
-					}
-				/>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"3%"}>
-					आफ्नो मोबाईल नम्बर हाल्नुहोस्
-				</Text>
-				<Input
-					marginLeft="25%"
-					marginTop={"1%"}
-					fontSize={"14px"}
-					required
-					borderRadius={"10px"}
-					type={"number"}
-					placeholder="आफ्नो मोबाईल नम्बर हाल्नुहोस्"
-					sx={{ height: "50px", width: "55%" }}
-					value={newUser.number}
-					onChange={(e) =>
-						setNewUser((newUser) => ({ ...newUser, number: e.target.value }))
-					}
-				/>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"3%"}>
-					वडा नं
-				</Text>
-				<Input
-					marginLeft="25%"
-					marginTop={"1%"}
-					fontSize={"14px"}
-					required
-					borderRadius={"10px"}
-					type="number"
-					placeholder="आफ्नो इमेल हाल्नुहोस्"
-					sx={{ height: "50px", width: "55%" }}
-					value={newUser.ward}
-					onChange={(e) =>
-						setNewUser((newUser) => ({ ...newUser, ward: e.target.value }))
-					}
-				/>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"3%"}>
-					आफ्नो इमेल हाल्नुहोस्
-				</Text>
-				<Input
-					marginLeft="25%"
-					marginTop={"1%"}
-					fontSize={"14px"}
-					required
-					borderRadius={"10px"}
-					type="email"
-					placeholder="आफ्नो इमेल हाल्नुहोस्"
-					sx={{ height: "50px", width: "55%" }}
-					value={newUser.email}
-					onChange={(e) =>
-						setNewUser((newUser) => ({
-							...newUser,
-							email: e.target.value,
-						}))
-					}
-				/>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"3%"}>
-					पासवर्ड हाल्नुहोस्
-				</Text>
-				<Input
-					marginLeft="25%"
-					borderRadius={"10px"}
-					fontSize={"14px"}
-					required
-					marginTop={"1%"}
-					type="password"
-					placeholder="पासवर्ड हाल्नुहोस्"
-					sx={{ height: "50px", width: "55%" }}
-					value={newUser.password}
-					onChange={(e) =>
-						setNewUser((newUser) => ({ ...newUser, password: e.target.value }))
-					}
-				/>
-				<Text marginLeft="25%" fontSize={"14px"} marginTop={"3%"}>
-					पासवर्ड पुस्ति गर्नुहोस्
-				</Text>
-				<Input
-					marginLeft="25%"
-					marginTop={"1%"}
-					fontSize={"14px"}
-					required
-					borderRadius={"10px"}
-					type="password"
-					placeholder="पासवर्ड पुस्ति गर्नुहोस्"
-					sx={{ height: "50px", width: "55%" }}
-					value={confirmPassword}
-					onChange={(e) => setConfirmPassword(e.target.value)}
-				/>
-				{/*<FormControl*/}
-				{/*	marginLeft="25%"*/}
-				{/*	marginTop={"2%"}*/}
-				{/*	borderRadius={"10px"}*/}
-				{/*	sx={{ height: "50px", width: "55%" }}*/}
-				{/*>*/}
-				{/*	<FormLabel fontSize={"14px"} >फोतो छानुहोस्</FormLabel>*/}
-				{/*	<Input*/}
-				{/*		fontSize={"14px"} required*/}
-				{/*		variant="unstyled"*/}
-				{/*		type="file"*/}
-				{/*		onChange={handleImageChange}*/}
-				{/*	/>*/}
-				{/*</FormControl>*/}
-				<RadioGroup onChange={setValue} value={value}>
-					<Stack direction="row" marginLeft="25%" marginTop={"5%"}>
-						<Radio fontSize={"14px"} required value={"1"}>
-							प्रसासन
-						</Radio>
-						<Radio fontSize={"14px"} required value={"2"}>
-							गणक
-						</Radio>
-					</Stack>
-				</RadioGroup>
-				<Button
-					bgColor="#2E2C72"
-					position={"relative"}
-					height={"40px"}
-					width="55%"
-					color={"white"}
-					marginLeft={"25%"}
-					marginTop={"5%"}
-					onClick={() => handleCreateUser()}
+				<Flex
+					direction={"column"}
+					margin={"auto"}
+					justifyContent={"center"}
+					width={"60%"}
 				>
-					साइन अप
-				</Button>
-				<Grid
-					marginBottom={"5%"}
-					templateColumns="repeat(2, 1fr)"
-					marginTop={"2%"}
-				>
-					<GridItem w="100%" marginLeft={"57%"}>
-						{" "}
-						पहिले नै खाता छ् ?
-					</GridItem>
-					<GridItem w="100%" marginLeft={"7%"} color={"#3547CE"}>
-						साइन इन गर्नुहोस्
-					</GridItem>
-				</Grid>
+					<FormControl textAlign={"left"}>
+						<Text fontSize={"14px"} marginY={"4px"}>
+							पुरा नाम्
+						</Text>
+						<Input
+							margin={"auto"}
+							borderRadius={"10px"}
+							fontSize={"14px"}
+							required
+							type="text"
+							placeholder="पुरा नाम्"
+							sx={{ height: "50px", width: "100%" }}
+							value={newUser.fullName}
+							onChange={(e) =>
+								setNewUser((newUser) => ({
+									...newUser,
+									fullName: e.target.value,
+								}))
+							}
+						/>
+						<Text fontSize={"14px"} marginY={"4px"} marginTop={"3%"}>
+							आफ्नो मोबाईल नम्बर हाल्नुहोस्
+						</Text>
+						<Input
+							margin={"auto"}
+							fontSize={"14px"}
+							required
+							borderRadius={"10px"}
+							type={"number"}
+							placeholder="आफ्नो मोबाईल नम्बर हाल्नुहोस्"
+							sx={{ height: "50px", width: "100%" }}
+							value={newUser.number}
+							onChange={(e) =>
+								setNewUser((newUser) => ({
+									...newUser,
+									number: e.target.value,
+								}))
+							}
+						/>
+						<Text fontSize={"14px"} marginY={"4px"} marginTop={"3%"}>
+							वडा नं
+						</Text>
+						<Input
+							margin={"auto"}
+							fontSize={"14px"}
+							required
+							borderRadius={"10px"}
+							type="string"
+							placeholder="आफ्नो इमेल हाल्नुहोस्"
+							sx={{ height: "50px", width: "100%" }}
+							value={newUser.ward}
+							onChange={(e) =>
+								setNewUser((newUser) => ({ ...newUser, ward: e.target.value }))
+							}
+						/>
+						<Text fontSize={"14px"} marginY={"4px"} marginTop={"3%"}>
+							आफ्नो इमेल हाल्नुहोस्
+						</Text>
+						<Input
+							margin={"auto"}
+							fontSize={"14px"}
+							required
+							borderRadius={"10px"}
+							type="email"
+							placeholder="आफ्नो इमेल हाल्नुहोस्"
+							sx={{ height: "50px", width: "100%" }}
+							value={newUser.email}
+							onChange={(e) =>
+								setNewUser((newUser) => ({
+									...newUser,
+									email: e.target.value,
+								}))
+							}
+						/>
+						<Text fontSize={"14px"} marginY={"4px"} marginTop={"3%"}>
+							पासवर्ड हाल्नुहोस्
+						</Text>
+						<Input
+							margin={"auto"}
+							borderRadius={"10px"}
+							fontSize={"14px"}
+							required
+							type="password"
+							placeholder="पासवर्ड हाल्नुहोस्"
+							sx={{ height: "50px", width: "100%" }}
+							value={newUser.password}
+							onChange={(e) =>
+								setNewUser((newUser) => ({
+									...newUser,
+									password: e.target.value,
+								}))
+							}
+						/>
+						<Text fontSize={"14px"} marginY={"4px"} marginTop={"3%"}>
+							पासवर्ड पुस्ति गर्नुहोस्
+						</Text>
+						<Input
+							margin={"auto"}
+							fontSize={"14px"}
+							required
+							borderRadius={"10px"}
+							type="password"
+							placeholder="पासवर्ड पुस्ति गर्नुहोस्"
+							sx={{ height: "50px", width: "100%" }}
+							value={confirmPassword}
+							onChange={(e) => setConfirmPassword(e.target.value)}
+						/>
+						<FormControl
+							marginLeft="25%"
+							marginTop={"2%"}
+							borderRadius={"10px"}
+							sx={{ height: "50px", width: "55%" }}
+						>
+							<FormLabel fontSize={"14px"}>फोतो छानुहोस्</FormLabel>
+							<Image src={selectedImage} alt="a" />
+							<Input
+								fontSize={"14px"}
+								required
+								variant="unstyled"
+								type="file"
+								onChange={handleImage}
+							/>
+						</FormControl>
+						<Text></Text>
+						<RadioGroup onChange={setRole} value={role}>
+							<Stack direction="row" marginTop={"5%"}>
+								<Radio fontSize={"14px"} required value={"admin"}>
+									प्रसासन
+								</Radio>
+								<Radio fontSize={"14px"} required value={"gadak"}>
+									गणक
+								</Radio>
+							</Stack>
+						</RadioGroup>
+
+						<Text></Text>
+						<RadioGroup onChange={setGender} value={gender}>
+							<Stack direction="row" marginTop={"5%"}>
+								<Radio fontSize={"14px"} required value={"male"}>
+									पुरुष
+								</Radio>
+								<Radio fontSize={"14px"} required value={"female"}>
+									महिला
+								</Radio>
+								<Radio fontSize={"14px"} required value={"others"}>
+									तेस्रो लिङ्गी
+								</Radio>
+							</Stack>
+						</RadioGroup>
+						<Button
+							bgColor="#2E2C72"
+							position={"relative"}
+							height={"50px"}
+							width="100%"
+							color={"white"}
+							margin={"auto"}
+							type="submit"
+							marginTop={"5%"}
+							onClick={(e) => handleCreateUser(event, newUser, selectedImage)}
+						>
+							साइन अप
+						</Button>
+					</FormControl>
+				</Flex>
 			</Card>
 		</Box>
 	);

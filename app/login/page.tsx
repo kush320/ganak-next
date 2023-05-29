@@ -12,8 +12,39 @@ import {
 	Text,
 	Center,
 } from "@chakra-ui/react";
+import { Router, useRouter } from "next/router";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { redirect } from "next/navigation";
+
+async function handleLogin(number, password) {
+	const url = "/api/auth/login";
+
+	const data = {
+		number: number,
+		password: password,
+	};
+
+	const response = await fetch(url, {
+		method: "POST",
+		body: JSON.stringify(data),
+		headers: {
+			"Content-type": "application/json; charset=utf-8",
+		},
+		credentials: "include",
+	});
+	if (response.ok) {
+		location.href = "/suchi";
+	}
+	if (!response.ok) {
+		toast.error("Login crediantials didn't match.");
+	}
+}
 
 export default function Home() {
+	const [password, setPassword] = useState("");
+	const [number, setNumber] = useState("");
+
 	return (
 		<Flex
 			width={"100%"}
@@ -82,6 +113,8 @@ export default function Home() {
 							marginTop: "5%",
 							marginLeft: "10%",
 						}}
+						value={number}
+						onChange={(e) => setNumber(e.target.value)}
 					/>
 
 					<Input
@@ -94,6 +127,8 @@ export default function Home() {
 							marginTop: "5%",
 							marginLeft: "10%",
 						}}
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 
 					<Text
@@ -107,6 +142,9 @@ export default function Home() {
 					<Button
 						bgColor="#2E2C72"
 						color="white"
+						onClick={() => {
+							handleLogin(number, password);
+						}}
 						sx={{
 							marginTop: "5%",
 							marginLeft: "10%",
