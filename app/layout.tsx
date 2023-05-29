@@ -21,7 +21,7 @@ export default function RootLayout({
 	const router = usePathname();
 
 	if (typeof document !== "undefined") {
-		if (!document.cookie) {
+		if (!document.cookie && router !== "/login") {
 			location.href = "/login";
 		}
 	}
