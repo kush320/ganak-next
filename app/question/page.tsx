@@ -49,19 +49,19 @@ export default function Questions() {
 					<Text marginLeft={"5%"} fontWeight={"bold"}>
 						वडा नं. :
 					</Text>
-					<Input marginLeft={"45%"} variant="flushed" width={"40%"} />
+					<Input marginLeft={"45%"} variant="outline" width={"40%"} />
 				</HStack>
 				<HStack>
 					<Text marginLeft={"5%"} fontWeight={"bold"}>
 						बस्तीको नाम :
 					</Text>
-					<Input marginLeft={"45%"} variant="flushed" width={"40%"} />
+					<Input marginLeft={"45%"} variant="outline" width={"40%"} />
 				</HStack>
 				<HStack marginBottom={"5%"}>
 					<Text marginLeft={"5%"} fontWeight={"bold"}>
 						परिवार क्र.सं :
 					</Text>
-					<Input marginLeft={"85%"} variant="flushed" width={"40%"} />
+					<Input marginLeft={"85%"} variant="outline" width={"40%"} />
 				</HStack>
 			</Box>
 			<Box
@@ -77,7 +77,7 @@ export default function Questions() {
 					<Text marginLeft={"5%"} fontWeight={"bold"}>
 						१. परिवार मूलीको नाम
 					</Text>
-					<Input variant="flushed" width={"40%"} />
+					<Input variant="outline" width={"40%"} />
 				</HStack>
 				<Text marginLeft={"5%"} marginTop={"2%"} fontWeight={"bold"}>
 					लिङ्ग
@@ -175,13 +175,13 @@ export default function Questions() {
 						</Thead>
 						<Tbody>
 							<Td>
-								<Input variant="flushed" width={"60%"} />
+								<Input variant="outline" width={"60%"} />
 							</Td>
 							<Td>
-								<Input variant="flushed" width={"60%"} />
+								<Input variant="outline" width={"60%"} />
 							</Td>
 							<Td>
-								<Input variant="flushed" width={"60%"} />
+								<Input variant="outline" width={"60%"} />
 							</Td>
 						</Tbody>
 					</Table>
@@ -274,7 +274,7 @@ export default function Questions() {
 				<Text marginLeft={"5%"} fontWeight={"bold"}>
 					क. कति पटक गर्भवती परिक्षण गरेको छ?
 				</Text>
-				<Input marginLeft={"5%"} variant="flushed" width={"90%"} />
+				<Input marginLeft={"5%"} variant="outline" width={"90%"} />
 				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
 					ख. प्रसुति कहाँ भएको हो?
 				</Text>
@@ -361,56 +361,19 @@ export default function Questions() {
 				color="black"
 				marginLeft={"5%"}
 				marginRight={"5%"}
+				padding={"5%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					१०. बितेको १ वर्षभित्र तपाईंको परिवारमा ५ वर्षमुनिका कुनै बालबालिकाको
-					मृत्यु भएको छ?
+				<Text fontWeight={"bold"} marginTop={"2%"}>
+					१०.१ बितेको १ बर्षभित्र तपाईंको परिवार्मा ५ बर्षमुनिको कुनै
+					बाल्बालिकको मृत्यु भयको छ ? (रोग्)
 				</Text>
-				<RadioGroup onChange={setClinic} value={clinic}>
-					<Stack marginLeft={"5%"} marginTop={"1%"} direction="row">
-						<Radio value="1">छ</Radio>
-						<Radio value="2">छैन</Radio>
-					</Stack>
-				</RadioGroup>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					यदि छ भने कतिजनाको मृत्यु भएको थियो र के कारणबाट मृत्यु भएको थियो ?
+				<Input variant="outline" width={"60%"} />
+
+				<Text fontWeight={"bold"} marginTop={"2%"}>
+					१०.२ बितेको १ बर्षभित्र तपाईंको परिवार्मा ५ बर्षमुनिको कुनै
+					बाल्बालिकको मृत्यु भयको छ ? (दुर्घटना)
 				</Text>
-				<div>
-					<Table borderColor={"black"} marginBottom={"5%"}>
-						<Thead>
-							<Tr>
-								<Th>संख्या</Th>
-								<Th>मृत्यु हुनाको कारण​</Th>
-							</Tr>
-						</Thead>
-						<Tbody>
-							<Tr>
-								<Td>
-									<Input variant="flushed" width={"60%"} />
-								</Td>
-								<Td>
-									<RadioGroup
-										onChange={setClinic}
-										value={clinic}
-										marginBottom={"5%"}
-									>
-										<Stack
-											marginLeft={"5%"}
-											marginTop={"1%"}
-											direction="column"
-										>
-											<Radio value="1">क्यान्सर</Radio>
-											<Radio value="2">मधुमेह(चिनिरोग)</Radio>
-											<Radio value="3">मुटु</Radio>
-											<Radio value="4">मृगौला</Radio>
-											<Radio value="5">अन्य</Radio>
-										</Stack>
-									</RadioGroup>
-								</Td>
-							</Tr>
-						</Tbody>
-					</Table>
-				</div>
+				<Input variant="outline" width={"60%"} />
 			</Box>
 			<Box
 				marginTop={"2%"}
@@ -523,7 +486,7 @@ export default function Questions() {
 						<Tbody>
 							<Tr>
 								<Td>
-									<Input variant="flushed" width={"60%"} />
+									<Input variant="outline" width={"60%"} />
 								</Td>
 							</Tr>
 						</Tbody>
@@ -682,7 +645,7 @@ export default function Questions() {
 				marginRight={"5%"}
 			>
 				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					२१ एक वर्षभित्र तपाईंको परिवारमा महिला तथा बालबालिका उपर हिंसा तथा
+					२१. एक वर्षभित्र तपाईंको परिवारमा महिला तथा बालबालिका उपर हिंसा तथा
 					सामाजिक कुरिती सम्बन्धी निम्न कुनै घटना घटेका छन+छैनन् ?
 				</Text>
 
@@ -723,7 +686,7 @@ export default function Questions() {
 				<Input
 					marginLeft={"5%"}
 					marginBottom={"5%"}
-					variant="flushed"
+					variant="outline"
 					width={"90%"}
 				/>
 			</Box>
@@ -834,7 +797,7 @@ export default function Questions() {
 				<Input
 					marginLeft={"5%"}
 					marginBottom={"5%"}
-					variant="flushed"
+					variant="outline"
 					width={"90%"}
 				/>
 			</Box>
@@ -847,17 +810,28 @@ export default function Questions() {
 				marginLeft={"5%"}
 				marginRight={"5%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
 					२८. परिवारको शैक्षिक स्थिति
 				</Text>
-				<RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
-					<Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
-						<Radio value="1">क. आधारभुत तह पढ्नेको संख्या: </Radio>
-						<Radio value="2">ख. कक्षा दशसम्म पढ्नेको संख्या:</Radio>
-						<Radio value="3"> ग. ‌कक्षा १२ सम्म पढ्नेको संख्या:</Radio>
-						<Radio value="4"> घ. कक्षा १२ भन्दामाथीको संख्या:</Radio>
-					</Stack>
-				</RadioGroup>
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					२८.१ आधारभुत तह पढ्नेको संख्या:
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					२८.२ कक्षा दशसम्म पढ्नेको संख्या:
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					२८.३ कक्षा १२ सम्म पढ्नेको संख्या:
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					२८.४ कक्षा १२ भन्दामाथीको संख्या:
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
 			</Box>
 			<Box
 				marginTop={"2%"}
@@ -902,7 +876,7 @@ export default function Questions() {
 				</RadioGroup>
 			</Box>
 			<Box
-				marginTop={"2%"}
+				marginY={"2%"}
 				width={"85%"}
 				borderRadius={"5px"}
 				bg="#f8f9ff"
@@ -910,90 +884,25 @@ export default function Questions() {
 				marginLeft={"5%"}
 				marginRight={"5%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					३०. घरबाट विद्यालय जान लाग्ने समय (उपयुक्त महलमा  चिन्ह लगाउनु होला)
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३०.१ घरबाट विद्यालय जान लाग्ने समय (कक्षा पाँचसम्म)
 				</Text>
-				<div>
-					<Table variant="simple" marginBottom={"5%"}>
-						<Thead>
-							<Tr>
-								<Th>विद्यालय</Th>
-								<Th>लाग्ने समय</Th>
-							</Tr>
-						</Thead>
-						<Tbody>
-							<Tr>
-								<Td>
-									<Radio value="1">कक्षा पाँचसम्म</Radio>
-								</Td>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
 
-								<Td>
-									<RadioGroup>
-										<Radio value="2">१५ मिनेट भन्दा कम </Radio>
-										<Radio marginLeft={"2%"} value="3">
-											१५-३० मिनेट{" "}
-										</Radio>
-										<Radio value="4">३० मिनेट – १ घण्टा </Radio>
-										<Radio marginLeft={"3%"} value="5">
-											१ घण्टाभन्दा बढी
-										</Radio>
-									</RadioGroup>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Radio value="2">आधारभुत तह </Radio>
-								</Td>
-								<Td>
-									<RadioGroup>
-										<Radio value="2">१५ मिनेट भन्दा कम </Radio>
-										<Radio marginLeft={"2%"} value="3">
-											१५-३० मिनेट{" "}
-										</Radio>
-										<Radio value="4">३० मिनेट – १ घण्टा </Radio>
-										<Radio marginLeft={"3%"} value="5">
-											१ घण्टाभन्दा बढी
-										</Radio>
-									</RadioGroup>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Radio value="3">कक्षा दशसम्म </Radio>
-								</Td>
-								<Td>
-									<RadioGroup>
-										<Radio value="2">१५ मिनेट भन्दा कम </Radio>
-										<Radio marginLeft={"2%"} value="3">
-											१५-३० मिनेट{" "}
-										</Radio>
-										<Radio value="4">३० मिनेट – १ घण्टा </Radio>
-										<Radio marginLeft={"3%"} value="5">
-											१ घण्टाभन्दा बढी
-										</Radio>
-									</RadioGroup>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Radio value="3">माध्यामिक तह </Radio>
-								</Td>
-								<Td>
-									<RadioGroup>
-										<Radio value="2">१५ मिनेट भन्दा कम </Radio>
-										<Radio marginLeft={"2%"} value="3">
-											१५-३० मिनेट{" "}
-										</Radio>
-										<Radio value="4">३० मिनेट – १ घण्टा </Radio>
-										<Radio marginLeft={"4%"} value="5">
-											१ घण्टाभन्दा बढी
-										</Radio>
-									</RadioGroup>
-								</Td>
-							</Tr>
-						</Tbody>
-					</Table>
-				</div>
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३०.२ घरबाट विद्यालय जान लाग्ने समय (आधारभतु तह)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३०.३ घरबाट विद्यालय जान लाग्ने समय (कक्षा दिसम्म)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३०.४ घरबाट विद्यालय जान लाग्ने समय (माध्यालमक तह)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
 			</Box>
 			<Box
 				marginTop={"2%"}
@@ -1022,7 +931,7 @@ export default function Questions() {
 									<Radio value="1">बालक</Radio>
 								</Td>
 								<Td>
-									<Input variant="flushed" />
+									<Input variant="outline" />
 								</Td>
 							</Tr>
 							<Tr>
@@ -1030,7 +939,7 @@ export default function Questions() {
 									<Radio value="1">बालिका</Radio>
 								</Td>
 								<Td>
-									<Input variant="flushed" />
+									<Input variant="outline" />
 								</Td>
 							</Tr>
 							<Tr>
@@ -1038,7 +947,7 @@ export default function Questions() {
 									<Text marginLeft={"2%"}>जम्मा</Text>
 								</Td>
 								<Td>
-									<Input variant="flushed" />
+									<Input variant="outline" />
 								</Td>
 							</Tr>
 						</Tbody>
@@ -1081,7 +990,7 @@ export default function Questions() {
 				<Input
 					marginLeft={"5%"}
 					marginBottom={"5%"}
-					variant="flushed"
+					variant="outline"
 					width={"90%"}
 				/>
 			</Box>
@@ -1194,33 +1103,16 @@ export default function Questions() {
 				color="black"
 				marginLeft={"5%"}
 				marginRight={"5%"}
+				paddingBottom={"2%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					३८. आजभन्दा पाँच वर्ष पहिले तपाईंको परिवारको बसोवास कहाँ थियो ?
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३८.१ आजभन्दा पाँच वर्ष पहिले तपाईंको परिवारको बसोवास कहाँ थियो ?
 				</Text>
-				<Radio value="1" marginLeft={"5%"}>
-					क. अन्यत्र स्थानमा
-				</Radio>
-				<Text
-					marginLeft={"5%"}
-					fontSize={"bold"}
-					fontWeight={"bold"}
-					marginTop={"2%"}
-				>
-					ख. यसै स्थानमा अन्यत्र स्थानबाट आएको भए यहाँ किन आउनु भएको ?
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					३८.२ यसै स्थानमा अन्यत्र स्थानबाट आएको भए यहाँ किन आउनु भएको ?
 				</Text>
-				<RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
-					<Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
-						<Radio value="1">क. सहरी सुविधाको लागि</Radio>
-						<Radio value="2">ख. द्वन्दका कारण</Radio>
-						<Radio value="2">ग. खेतीपाती गर्न</Radio>
-						<Radio value="2">घ. व्यापार व्यवसाय गर्न</Radio>
-						<Radio value="2">ङ. बैवाहिक सम्बन्ध भएर</Radio>
-						<Radio value="2">च. रोजगारीका लागि</Radio>
-						<Radio value="2">छ. प्राकृतिक विपत्तिबाट</Radio>
-						<Radio value="2">ज. अन्य</Radio>
-					</Stack>
-				</RadioGroup>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
 			</Box>
 			<Box
 				marginTop={"2%"}
@@ -1327,10 +1219,17 @@ export default function Questions() {
 				marginLeft={"5%"}
 				marginRight={"5%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					४३. तपाईको परिवारमा १८ वर्षभन्दा कम उमेरका शारीरिक तथा मानसिक हिसाबले
-					अपांगता भएका सदस्यहरु भएमा तलको विवरण दिनुहोस् ।
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४३.१ तपाईको परिवारमा १८ वर्षभन्दा कम उमेरका शारीरिक तथा मानसिक हिसाबले
+					अपांगता भएका सदस्यहरु भएमा तलको विवरण दिनुहोस् ।(बालक)
 				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४३.२ यसै स्थानमा अन्यत्र स्थानबाट आएको भए यहाँ किन आउनु भएको ?
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+
 				<div>
 					<Table variant="simple" marginBottom={"5%"}>
 						<Thead>
@@ -1447,66 +1346,25 @@ export default function Questions() {
 				marginLeft={"5%"}
 				marginRight={"5%"}
 			>
-				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
-					४६. तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४६.१ तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?(घर
+					व्यवहारसम्बन्धी विषयमा निर्णय)
 				</Text>
-				<div>
-					<Table variant="simple" marginBottom={"5%"}>
-						<Thead>
-							<Tr>
-								<Th>कार्य</Th>
-								<Th>महिला</Th>
-								<Th>पुरुष</Th>
-							</Tr>
-						</Thead>
-						<Tbody>
-							<Tr>
-								<Td>
-									<Text>घर व्यवहारसम्बन्धी विषयमा निर्णय</Text>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Text>घरायसी काममा संलग्न</Text>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Text>बैंकमा खाता संचालन</Text>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-							</Tr>
-							<Tr>
-								<Td>
-									<Text>उद्योग व्यापारमा सहभागिता</Text>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-								<Td>
-									<Radio></Radio>
-								</Td>
-							</Tr>
-						</Tbody>
-					</Table>
-				</div>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४६.२ तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?(घरायसी काममा
+					संलग्न)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४६.३ तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?(बैंकमा खाता
+					संचालन)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginY={"2%"}>
+					४६.४ तपाईंको परिवारमा निम्न कार्यहरु प्रायः कसले गर्दछ ?(घरायसी काममा)
+				</Text>
+				<Input marginLeft={"5%"} variant="outline" width={"60%"} />
 			</Box>
 			<Box
 				marginTop={"2%"}
@@ -1587,6 +1445,35 @@ export default function Questions() {
 						<Radio value="2">ग. वन्यजन्तु</Radio>
 						<Radio value="2">घ. भिरबाट लढ्ने</Radio>
 						<Radio value="2">ङ. अन्य</Radio>
+					</Stack>
+				</RadioGroup>
+			</Box>
+			<Box
+				marginTop={"2%"}
+				width={"85%"}
+				bg="#f8f9ff"
+				borderRadius={"5px"}
+				color="black"
+				marginLeft={"5%"}
+				marginRight={"5%"}
+			>
+				<Text marginLeft={"5%"} fontWeight={"bold"} marginTop={"2%"}>
+					५०. विद्यालय जाँदा आउँदा बालबालिकालाई के को जोखिम रहेको छ ?
+				</Text>
+				<RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
+					<Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+						<Radio value="1">छ</Radio>
+						<Radio value="2">छैन</Radio>
+					</Stack>
+				</RadioGroup>
+				<Text marginLeft={"5%"} fontWeight={"semibold"} marginTop={"2%"}>
+					यदी छ भने
+				</Text>
+				<RadioGroup onChange={setClinic} value={clinic} marginBottom={"5%"}>
+					<Stack marginLeft={"5%"} marginTop={"1%"} direction="column">
+						<Radio value="1">बुबा गुमाएको</Radio>
+						<Radio value="2">आमा गुमाएको</Radio>
+						<Radio value="2">दुवै गुमाएको</Radio>
 					</Stack>
 				</RadioGroup>
 			</Box>

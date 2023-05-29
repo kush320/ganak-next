@@ -3,3 +3,7 @@
 body {
 	font-family: "Biryani", sans-serif;
 }
+
+input {
+	border-color: #7fd4fc !important;
+}

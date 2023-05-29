@@ -1,26 +1,27 @@
 /** @type {import('next').NextConfig} */
 
-const isAuthenticated = false
+// const isAuthenticated = false
 const nextConfig = {
-  async redirects() {
+  async rewrites() {
     return [
       {
-        source: '/',
-        destination: '/login',
-        permanent: true,
+        source: "/api",
+        destination: `${process.env.BACKEND_URL}/:api`
       },
-      // {
-      //   source: '/login',
-      //   destination: isAuthenticated ? '/suchi' : '/login',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/register',
-      //   destination: isAuthenticated ? '/suchi' : '/register',
-      //   permanent: true,
-      // }
     ];
   },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/login',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+  env: {
+    API_URL: `${process.env.BACKEND_URL}`
+  }
 
 }
 
