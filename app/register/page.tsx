@@ -20,31 +20,34 @@ import React, { HtmlHTMLAttributes } from "react";
 import { Radio, RadioGroup } from "@chakra-ui/react";
 import { createUser } from "@/typings";
 import toast from "react-hot-toast";
+import { parseUrl } from "next/dist/shared/lib/router/utils/parse-url";
+import { resolveObjectURL } from "buffer";
 
-async function handleCreateUser(event, newUser, image) {
+async function handleCreateUser(newUser, image) {
 	const formData = new FormData();
+
 	Object.keys(newUser).forEach((key) => {
 		formData.append(key, newUser[key]);
 	});
-
 	formData.append("image", image);
 
-	event.preventDefault();
-	// if (newUser.password !== newUser.confirmPassword) {
-	// 	toast.error("Passwords don't match");
-	// }
+	if (newUser.password && newUser.password !== newUser.confirmPassword) {
+		toast.error("Passwords don't match");
+	}
 
 	const url = "/api/auth/register";
 
-	fetch(url, {
+	const response = await fetch(url, {
 		method: "POST",
 		body: formData,
-		headers: {
-			"Content-type": "multipart/form-data",
-		},
 		credentials: "include",
 	});
-	console.log(formData);
+	if (response.ok) {
+		location.href = "/login";
+	}
+	if (!response.ok) {
+		toast.error("Invalid input, please check your information.");
+	}
 }
 
 export default function Register() {
@@ -54,6 +57,7 @@ export default function Register() {
 	const [gender, setGender] = React.useState("male");
 	const [selectedImage, setSelectedImage] = React.useState("");
 	const [confirmPassword, setConfirmPassword] = React.useState("");
+	const [previewImage, setPreviewImage] = React.useState(null);
 	const [newUser, setNewUser] = React.useState<createUser>({
 		number: "",
 		password: "",
@@ -62,12 +66,12 @@ export default function Register() {
 		role: role,
 		fullName: "",
 		email: "",
-		confirmPassword: "",
 	});
 
 	function handleImage(e) {
 		console.log(e.target.files);
 		setSelectedImage(e.target.files[0]);
+		setPreviewImage(URL.createObjectURL(e.target.files[0]));
 	}
 
 	return (
@@ -217,6 +221,7 @@ export default function Register() {
 							margin={"auto"}
 							fontSize={"14px"}
 							required
+							marginBottom={"10px"}
 							borderRadius={"10px"}
 							type="password"
 							placeholder="पासवर्ड पुस्ति गर्नुहोस्"
@@ -224,14 +229,15 @@ export default function Register() {
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
 						/>
+						{previewImage && (
+							<Image src={previewImage} alt="Selected profile image." />
+						)}
 						<FormControl
-							marginLeft="25%"
-							marginTop={"2%"}
+							marginY={"20px"}
 							borderRadius={"10px"}
 							sx={{ height: "50px", width: "55%" }}
 						>
 							<FormLabel fontSize={"14px"}>फोतो छानुहोस्</FormLabel>
-							<Image src={selectedImage} alt="a" />
 							<Input
 								fontSize={"14px"}
 								required
@@ -240,9 +246,10 @@ export default function Register() {
 								onChange={handleImage}
 							/>
 						</FormControl>
-						<Text></Text>
+
+						<Text marginTop={"5%"}>भूमिका</Text>
 						<RadioGroup onChange={setRole} value={role}>
-							<Stack direction="row" marginTop={"5%"}>
+							<Stack direction="row">
 								<Radio fontSize={"14px"} required value={"admin"}>
 									प्रसासन
 								</Radio>
@@ -252,9 +259,9 @@ export default function Register() {
 							</Stack>
 						</RadioGroup>
 
-						<Text></Text>
+						<Text marginTop={"5%"}>लिङ्ग</Text>
 						<RadioGroup onChange={setGender} value={gender}>
-							<Stack direction="row" marginTop={"5%"}>
+							<Stack direction="row">
 								<Radio fontSize={"14px"} required value={"male"}>
 									पुरुष
 								</Radio>
@@ -274,8 +281,8 @@ export default function Register() {
 							color={"white"}
 							margin={"auto"}
 							type="submit"
-							marginTop={"5%"}
-							onClick={(e) => handleCreateUser(event, newUser, selectedImage)}
+							marginY={"5%"}
+							onClick={(e) => handleCreateUser(newUser, selectedImage)}
 						>
 							साइन अप
 						</Button>

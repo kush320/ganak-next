@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
 	Grid,
@@ -23,8 +23,17 @@ import { FiCalendar, FiUser, FiAlignCenter } from "react-icons/fi";
 import SearchBar from "./SearchBar";
 import { useRouter } from "next/navigation";
 import getCurrentNepaliDate from "get-nepali-date";
+import getRequest from "@/utils/getRequest";
 
 export default function Navbar({ children }) {
+	const [data, setData] = useState(null);
+
+	useEffect(() => {
+		getRequest("/api/user/get-profile").then((data) => {
+			setData(data.data);
+		});
+	}, []);
+
 	const router = useRouter();
 	return (
 		<Grid
@@ -92,26 +101,31 @@ export default function Navbar({ children }) {
 				boxShadow={"base"}
 			>
 				<Flex
-					justifyContent={"space-evenly"}
+					justifyContent={"space-between"}
+					paddingX={"20px"}
 					h={"full"}
 					alignItems={"center"}
 					w={"full"}
 				>
-					<Flex alignItems={"center"} gap={3}>
+					<Flex alignItems={"center"} w={"fit-content"} gap={3}>
 						<Avatar
 							borderRadius={"30%"}
 							marginTop={"0%"}
 							marginLeft={"3%"}
 							height={"40px"}
-							name="Ryan Florence"
-							src="https://bit.ly/ryan-florence"
+							name={data?.profile.fullName}
+							src={`/api/public/images/${data?.profile.image}`}
 						/>
-
-						<Flex direction={"column"} height={"full"}>
-							<Text marginTop={"18%"} fontWeight={"semibold"}>
-								राम चोर
+						<Flex w={"fit-content"} direction={"column"} height={"full"}>
+							<Text
+								w={"fit-content"}
+								fontSize={"15px"}
+								marginTop={"18%"}
+								fontWeight={"semibold"}
+							>
+								{data?.profile.fullName}
 							</Text>
-							<Text fontSize={"14px"}>ब्यबस्थापक</Text>
+							<Text fontSize={"12px"}>{data?.role}</Text>
 						</Flex>
 						<Box width={"10%"}>
 							<Stack marginLeft={"70%"}>
@@ -123,9 +137,9 @@ export default function Navbar({ children }) {
 							</Stack>
 						</Box>
 					</Flex>
-					<Box width={"45%"}>
+					{/* <Box width={"45%"}>
 						<SearchBar />
-					</Box>
+					</Box> */}
 					<Box>
 						<Text textAlign={"end"}>{getCurrentNepaliDate()}</Text>
 					</Box>

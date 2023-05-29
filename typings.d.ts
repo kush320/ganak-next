@@ -7,7 +7,7 @@ export interface createUser {
 	fullName: string;
 	email: string;
 	// image: string;
-	confirmPassword: string;
+	// confirmPassword: string;
 }
 
 export interface loginUser {
