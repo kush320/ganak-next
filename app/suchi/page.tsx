@@ -35,7 +35,7 @@ export default function AllSuchi() {
 		getRequest(`/api/suchi/get-suchi?page=${page}`).then((data) => {
 			setData(data?.data);
 		});
-	}, [data]);
+	}, []);
 
 	async function handleDelete(id) {
 		const res = await axios.delete(`/api/suchi/delete-suchi?suchiId=${id}`);

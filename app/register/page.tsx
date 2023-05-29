@@ -31,20 +31,20 @@ async function handleCreateUser(newUser, image) {
 
 	if (newUser.password && newUser.password !== newUser.confirmPassword) {
 		toast.error("Passwords don't match");
-	}
+	} else {
+		const url = "/api/auth/register";
 
-	const url = "/api/auth/register";
-
-	const response = await fetch(url, {
-		method: "POST",
-		body: formData,
-		credentials: "include",
-	});
-	if (response.ok) {
-		location.href = "/login";
-	}
-	if (!response.ok) {
-		toast.error("Invalid input, please check your information.");
+		const response = await fetch(url, {
+			method: "POST",
+			body: formData,
+			credentials: "include",
+		});
+		if (response.ok) {
+			location.href = "/suchi";
+		}
+		if (!response.ok) {
+			toast.error("Invalid input, please check your information.");
+		}
 	}
 }
 

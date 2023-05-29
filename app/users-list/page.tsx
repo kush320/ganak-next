@@ -42,7 +42,7 @@ export default function UsersList() {
 		getRequest("/api/user/get-user").then((data) => {
 			setData(data.data);
 		});
-	}, [data]);
+	}, []);
 
 	async function handleDelete(id) {
 		const res = await axios.delete(`/api/user/delete?userId=${id}`);
