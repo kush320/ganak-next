@@ -12,10 +12,10 @@ import {
 	Text,
 	Center,
 } from "@chakra-ui/react";
-import { Router, useRouter } from "next/router";
+
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 async function handleLogin(number, password) {
 	const url = "/api/auth/login";
@@ -44,6 +44,8 @@ async function handleLogin(number, password) {
 export default function Home() {
 	const [password, setPassword] = useState("");
 	const [number, setNumber] = useState("");
+
+	const router = useRouter();
 
 	return (
 		<Flex
@@ -154,28 +156,9 @@ export default function Home() {
 					>
 						अगादि बध्नुहोस्
 					</Button>
-					<Text marginTop={"5%"} textAlign={"center"}>
+					{/* <Text marginTop={"5%"} textAlign={"center"}>
 						पासवर्ड बिर्सिनुभयो ?
-					</Text>
-					<Divider
-						marginLeft={"5%"}
-						height={"1px"}
-						marginTop={"10%"}
-						backgroundColor={"black"}
-						width={"90%"}
-					/>
-					<Button
-						bgColor="#30A525"
-						color={"white"}
-						sx={{
-							marginLeft: "12%",
-							marginTop: "5%",
-							height: "40px",
-							width: "78%",
-						}}
-					>
-						नया खाता बनाउनुहोस्
-					</Button>
+					</Text> */}
 				</Card>
 			</Box>
 		</Flex>

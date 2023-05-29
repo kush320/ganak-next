@@ -35,6 +35,7 @@ export default function Navbar({ children }) {
 	}, []);
 
 	const router = useRouter();
+
 	return (
 		<Grid
 			h="100vh"
@@ -98,57 +99,36 @@ export default function Navbar({ children }) {
 				colSpan={8}
 				bg="white"
 				w={"full"}
+				h="full"
 				boxShadow={"base"}
 			>
-				<Flex
-					justifyContent={"space-between"}
-					paddingX={"20px"}
-					h={"full"}
-					alignItems={"center"}
-					w={"full"}
-				>
-					<Flex alignItems={"center"} w={"fit-content"} gap={3}>
-						<Avatar
-							borderRadius={"30%"}
-							marginTop={"0%"}
-							marginLeft={"3%"}
-							height={"40px"}
-							name={data?.profile.fullName}
-							src={`/api/public/images/${data?.profile.image}`}
-						/>
-						<Flex w={"fit-content"} direction={"column"} height={"full"}>
-							<Text
-								w={"fit-content"}
-								fontSize={"15px"}
-								marginTop={"18%"}
-								fontWeight={"semibold"}
-							>
-								{data?.profile.fullName}
-							</Text>
-							<Text fontSize={"12px"}>{data?.role}</Text>
-						</Flex>
-						<Box width={"10%"}>
-							<Stack marginLeft={"70%"}>
-								<Divider
-									orientation="vertical"
-									h="40px"
-									borderColor={"blackAlpha.300"}
-								/>
-							</Stack>
-						</Box>
+				<Flex alignItems={"center"} h={"full"} w={"full"} gap={3}>
+					<Avatar
+						borderRadius={"30%"}
+						marginTop={"0%"}
+						marginLeft={"3%"}
+						height={"40px"}
+						name={data?.profile.fullName}
+						src={`/api/public/images/${data?.profile.image}`}
+					/>
+					<Flex w={"fit-content"} direction={"column"} height={"full"}>
+						<Text
+							w={"full"}
+							fontSize={"15px"}
+							marginTop={"18%"}
+							fontWeight={"semibold"}
+						>
+							{data?.profile.fullName}
+						</Text>
+						<Text fontSize={"12px"}>{data?.role}</Text>
 					</Flex>
-					{/* <Box width={"45%"}>
-						<SearchBar />
-					</Box> */}
-					<Box>
-						<Text textAlign={"end"}>{getCurrentNepaliDate()}</Text>
-					</Box>
 				</Flex>
 			</GridItem>
 
 			<GridItem
-				overflow={"scroll"}
-				height={"100%"}
+				overflowY={"scroll"}
+				width={"full"}
+				height={"full"}
 				rowSpan={12}
 				colSpan={8}
 				// bg="white"

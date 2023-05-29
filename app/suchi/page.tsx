@@ -23,16 +23,28 @@ import SearchBar from "@/components/SearchBar";
 import getRequest from "@/utils/getRequest";
 import Fuse from "fuse.js";
 import axios from "axios";
+import { ScrollListener } from "react-scroll-listener";
+import toast from "react-hot-toast";
 
-export default function Suchi() {
+export default function AllSuchi() {
 	const [data, setData] = useState([]);
 	const [query, setQuery] = useState("");
+	const [page, setPage] = useState("1");
 
 	useEffect(() => {
-		getRequest("/api/suchi/get-suchi").then((data) => {
-			setData(data.data);
+		getRequest(`/api/suchi/get-suchi?page=${page}`).then((data) => {
+			setData(data?.data);
 		});
-	}, []);
+	}, [data]);
+
+	async function handleDelete(id) {
+		const res = await axios.delete(`/api/suchi/delete-suchi?suchiId=${id}`);
+		if (res.status === 200) {
+			toast.success("Suchi deleted successfully.");
+		} else {
+			toast.error("Action not completed, try again.");
+		}
+	}
 
 	const options = {
 		includeScore: true,
@@ -51,15 +63,14 @@ export default function Suchi() {
 				<Td fontSize={"14px"}>{data.ward}</Td>
 				<Td fontSize={"14px"}>{data.bastiName}</Td>
 				<Td fontSize={"14px"}>
-					{data.createdAt.year}-{data.createdAt.month + 1}-{data.createdAt.date}
+					{data.createdAt?.year}-{data.createdAt?.month + 1}-
+					{data.createdAt?.date}
 				</Td>
 				<Td display={"flex"} gap={4}>
 					<DeleteIcon
 						color={"red.400"}
 						cursor={"pointer"}
-						onClick={() =>
-							axios.delete(`/api/suchi/delete-suchi?suchiId=${data.suchiId}`)
-						}
+						onClick={() => handleDelete(data.suchiId)}
 						sx={{
 							marginLeft: "5%",
 							size: "20px",
@@ -71,12 +82,17 @@ export default function Suchi() {
 							marginLeft: "5%",
 							size: "20px",
 						}}
-						onClick={() => router.push("/question")}
+						// onClick={() => router.push(`/suchi/${data.suchiId}`)}/
+						onClick={() => alert("Coming Soon!")}
 					/>
 				</Td>
 			</Tr>
 		);
 	};
+
+	if (!data) {
+		return <h1>कुनै डाटा फेला परेन</h1>;
+	}
 
 	if (data) {
 		return (
@@ -123,8 +139,8 @@ export default function Suchi() {
 					</Thead>
 					<Tbody>
 						{query === ""
-							? data.map((i) => TableContent(i))
-							: filteredData.map((i) => TableContent(i.item))}
+							? data?.map((i) => TableContent(i))
+							: filteredData?.map((i) => TableContent(i.item))}
 					</Tbody>
 				</Table>
 			</TableContainer>

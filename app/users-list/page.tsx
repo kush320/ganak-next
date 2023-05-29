@@ -29,8 +29,12 @@ import { ChevronLeftIcon } from "@chakra-ui/icons";
 import SearchBar from "@/components/SearchBar";
 import getRequest from "@/utils/getRequest";
 import Fuse from "fuse.js";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function UsersList() {
+	const router = useRouter();
 	const [data, setData] = useState([]);
 	const [query, setQuery] = useState("");
 
@@ -38,7 +42,16 @@ export default function UsersList() {
 		getRequest("/api/user/get-user").then((data) => {
 			setData(data.data);
 		});
-	}, []);
+	}, [data]);
+
+	async function handleDelete(id) {
+		const res = await axios.delete(`/api/user/delete?userId=${id}`);
+		if (res.status === 200) {
+			toast.success("User deleted successfully.");
+		} else {
+			toast.error("Action not completed, try again.");
+		}
+	}
 
 	const options = {
 		includeScore: true,
@@ -63,9 +76,11 @@ export default function UsersList() {
 				</Td>
 				<Td fontSize={"14px"}>{data.id}</Td>
 				<Td fontSize={"14px"}>{data.number}</Td>
-				<Td>
+				<Td display={"flex"} gap={3}>
 					<ViewIcon />
 					<DeleteIcon
+						color={"red.500"}
+						onClick={() => handleDelete(data.userId)}
 						sx={{
 							marginLeft: "5%",
 							size: "20px",
@@ -82,6 +97,9 @@ export default function UsersList() {
 		);
 	};
 
+	if (!data) {
+		return <h1>कुनै डाटा फेला परेन</h1>;
+	}
 	if (data) {
 		return (
 			<div>
@@ -96,6 +114,21 @@ export default function UsersList() {
 							<Stack marginLeft={"70%"}>
 								<SearchBar query={query} setQuery={setQuery} />
 							</Stack>
+						</Box>
+						<Box>
+							<Button
+								bgColor="#2E2C72"
+								position={"relative"}
+								height={"50px"}
+								width="100%"
+								color={"white"}
+								margin={"auto"}
+								type="submit"
+								marginY={"5%"}
+								onClick={(e) => router.push("/register")}
+							>
+								Add new user
+							</Button>
 						</Box>
 					</HStack>
 					<Table marginTop={"2%"} backgroundColor={"white"}>
@@ -117,8 +150,8 @@ export default function UsersList() {
 						</Thead>
 						<Tbody>
 							{query === ""
-								? data.map((i) => TableContent(i))
-								: filteredData.map((i) => TableContent(i.item))}
+								? data?.map((i) => TableContent(i))
+								: filteredData?.map((i) => TableContent(i.item))}
 						</Tbody>
 					</Table>
 				</TableContainer>

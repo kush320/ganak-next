@@ -20,8 +20,6 @@ import React, { HtmlHTMLAttributes } from "react";
 import { Radio, RadioGroup } from "@chakra-ui/react";
 import { createUser } from "@/typings";
 import toast from "react-hot-toast";
-import { parseUrl } from "next/dist/shared/lib/router/utils/parse-url";
-import { resolveObjectURL } from "buffer";
 
 async function handleCreateUser(newUser, image) {
 	const formData = new FormData();

@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import { useRouter, usePathname } from "next/navigation";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +19,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	const router = usePathname();
-	// const noNav = ["/login", "/register"];
+
+	if (typeof document !== "undefined") {
+		if (!document.cookie) {
+			location.href = "/login";
+		}
+	}
 
 	return (
 		<html lang="en">
 			<body className={inter.className}>
 				<ChakraProvider>
-					<Toaster/>
+					<Toaster />
 					{router !== "/register" && router !== "/login" ? (
 						<Navbar>{children}</Navbar>
 					) : (
